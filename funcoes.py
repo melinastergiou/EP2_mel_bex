@@ -1,6 +1,7 @@
 # FUNÇÕES BASE DO EP2
 #importando bibliotecas
 import random 
+import math 
 
 # Normalizando bases de países 
 EARTH_RADIUS = 6371
@@ -3832,7 +3833,6 @@ def normaliza_bp(DADOS):
     return bpaises 
 
 dados_normalizados = normaliza_bp(DADOS)
-print(dados_normalizados)
 
 # Sorteando paises
 def sorteia_pais(dicp):
@@ -3840,4 +3840,19 @@ def sorteia_pais(dicp):
 
   psort = random.choice(paises)
 
-  return psort 
+  return psort
+
+# Distância de Harversine
+def haversine(raio, p1, l1, p2, l2):
+  a = math.sin((p2-p1)/2)**2
+
+  b = math.sin((l2-l1)/2)**2 
+  c = math.cos(p1)*math.cos(p2)*b 
+
+  d = math.sqrt(a + c)
+
+  e = math.asin(d)
+
+  distancia = 2*raio*e 
+
+  return distancia 
