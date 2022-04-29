@@ -3828,3 +3828,6 @@ def normaliza_bp(DADOS):
             bpaises[pais] = infop 
 
     return bpaises 
+
+dados_normalizados = normaliza_bp(DADOS)
+print(dados_normalizados)
