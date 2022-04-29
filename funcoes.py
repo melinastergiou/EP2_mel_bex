@@ -1,4 +1,6 @@
 # FUNÇÕES BASE DO EP2
+#importando bibliotecas
+import random 
 
 # Normalizando bases de países 
 EARTH_RADIUS = 6371
@@ -3831,3 +3833,11 @@ def normaliza_bp(DADOS):
 
 dados_normalizados = normaliza_bp(DADOS)
 print(dados_normalizados)
+
+# Sorteando paises
+def sorteia_pais(dicp):
+  paises = list(dicp.keys())
+
+  psort = random.choice(paises)
+
+  return psort 
