@@ -3856,3 +3856,24 @@ def haversine(raio, p1, l1, p2, l2):
   distancia = 2*raio*e 
 
   return distancia 
+
+  # Adicionando em uma Lista Ordenada
+
+def adiciona_em_ordem(pais, distancia, lista):
+    novod = {}
+    distlista = []
+    for listas in lista:
+        npais =  listas[0] 
+        ndistancia = listas[1]
+        if pais not in lista:
+            for npais in listas:
+                distlista.append(listas[1])
+    return distlista 
+    
+
+print(adiciona_em_ordem("siria", 5919,
+    [['libia', 3678],
+    ['franca', 3998],
+    ['egito', 5008],
+    ['india', 9919],
+    ['japao', 13836]]))  
