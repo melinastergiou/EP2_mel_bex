@@ -1,0 +1,1 @@
+# FUNÇÕES BASE DO EP2
