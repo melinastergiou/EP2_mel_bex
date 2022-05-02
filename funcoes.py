@@ -3844,16 +3844,18 @@ def sorteia_pais(dicp):
 
 # Distância de Harversine
 def haversine(raio, p1, l1, p2, l2):
+  p1 = math.radians(p1)
+  p2 = math.radians(p2)
+  l1 = math.radians(l1)
+  l2 = math.radians(l2)
+
   a = math.sin((p2-p1)/2)**2
+  b = math.cos(p1)*math.cos(p2)
+  c = math.sin((l2-l1)/2)**2 
 
-  b = math.sin((l2-l1)/2)**2 
-  c = math.cos(p1)*math.cos(p2)*b 
+  raiz = math.sqrt(a + (b*c))
 
-  d = math.sqrt(a + c)
-
-  e = math.asin(d)
-
-  distancia = 2*raio*e 
+  distancia = 2*raio*math.asin(raiz)
 
   return distancia 
 
