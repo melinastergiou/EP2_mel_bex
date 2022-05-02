@@ -3859,7 +3859,7 @@ def haversine(raio, p1, l1, p2, l2):
 
   return distancia 
 
-  # Adicionando em uma Lista Ordenada
+# Adicionando em uma Lista Ordenada
 
 def adiciona_em_ordem(pais, distancia, lista):
     novod = {}
@@ -3879,3 +3879,11 @@ print(adiciona_em_ordem("siria", 5919,
     ['egito', 5008],
     ['india', 9919],
     ['japao', 13836]]))  
+
+# Checar se um país está em uma lista de países+distâncias
+def esta_na_lista(pais, listap):
+  for p in listap:
+    if p[0] == pais:
+      return True 
+  
+  return False 
