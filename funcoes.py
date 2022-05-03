@@ -3,7 +3,7 @@
 import random 
 import math 
 
-# Normalizando bases de países 
+# Normalizando bases de países (sucesso)
 EARTH_RADIUS = 6371
 DADOS = {
   "asia": {
@@ -3834,7 +3834,7 @@ def normaliza_bp(DADOS):
 
 dados_normalizados = normaliza_bp(DADOS)
 
-# Sorteando paises
+# Sorteando paises (sucesso)
 def sorteia_pais(dicp):
   paises = list(dicp.keys())
 
@@ -3859,7 +3859,7 @@ def haversine(raio, p1, l1, p2, l2):
 
   return distancia 
 
-# Adicionando em uma Lista Ordenada
+# Adicionando em uma Lista Ordenada (em andamento)
 def adiciona_em_ordem(pais, distancia, lista):
     novod = {}
     distlista = []
@@ -3887,8 +3887,21 @@ def esta_na_lista(pais, listap):
   
   return False 
 
+# Está na Lista? (sucesso)
+def esta_na_lista (pais, lista):
+        l =[]
+        i = 0
+        while i< len(lista):
+            paises = lista[i][0]
+            l.append(paises)
+            i = i + 1
+        if pais not in l:
+            return False
+        else:
+            return True
+  
 
-# Sorteia Letra com Restrições
+# Sorteia Letra com Restrições (em andamento)
 from random import*
 def sorteia_letra (palavra, listar):
     cespecial = ['.', ',','-',';',' ']
