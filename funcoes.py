@@ -3844,18 +3844,18 @@ def sorteia_pais(dicp):
 
 # Distância de Harversine
 def haversine(raio, p1, l1, p2, l2):
-  p1 = math.radians(p1)
-  p2 = math.radians(p2)
-  l1 = math.radians(l1)
-  l2 = math.radians(l2)
+  p1 = radians(p1)
+  p2 = radians(p2)
+  l1 = radians(l1)
+  l2 = radians(l2)
 
-  a = math.sin((p2-p1)/2)**2
-  b = math.cos(p1)*math.cos(p2)
-  c = math.sin((l2-l1)/2)**2 
+  a = sin((p2-p1)/2)**2
+  b = cos(p1)*cos(p2)
+  c = sin((l2-l1)/2)**2 
 
-  raiz = math.sqrt(a + (b*c))
+  raiz = sqrt(a + (b*c))
 
-  distancia = 2*raio*math.asin(raiz)
+  distancia = 2*raio*asin(raiz)
 
   return distancia 
 
@@ -3902,7 +3902,6 @@ def esta_na_lista (pais, lista):
   
 
 # Sorteia Letra com Restrições (em andamento)
-from random import*
 def sorteia_letra (palavra, listar):
     cespecial = ['.', ',','-',';',' ']
     g = palavra.lower()
