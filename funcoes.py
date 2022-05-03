@@ -3860,7 +3860,6 @@ def haversine(raio, p1, l1, p2, l2):
   return distancia 
 
 # Adicionando em uma Lista Ordenada
-
 def adiciona_em_ordem(pais, distancia, lista):
     novod = {}
     distlista = []
@@ -3887,3 +3886,18 @@ def esta_na_lista(pais, listap):
       return True 
   
   return False 
+
+
+# Sorteia Letra com Restrições
+from random import*
+def sorteia_letra (palavra, listar):
+    cespecial = ['.', ',','-',';',' ']
+    g = palavra.lower()
+    h = list(g)
+    letra = choice(h)
+    if letra not in listar and letra not in cespecial:
+        return letra
+    else:
+        return "" 
+    
+
