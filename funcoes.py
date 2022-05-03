@@ -1,7 +1,7 @@
 # FUNÇÕES BASE DO EP2
-#importando bibliotecas
-import random 
-import math 
+# Importando bibliotecas
+from random import*
+from math import * 
 
 # Normalizando bases de países (sucesso)
 EARTH_RADIUS = 6371
