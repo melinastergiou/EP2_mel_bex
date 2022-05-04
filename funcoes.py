@@ -3902,6 +3902,18 @@ def esta_na_lista (pais, lista):
   
 
 # Sorteia Letra com Restrições (em andamento)
+
+# Sucesso 
+def sorteia_letra (palavra, restritas):
+    cespecial = ['.', ',', '-', ';', ' ']
+    nl = cespecial + restritas
+    palavra = palavra.lower()
+    for np in nl:
+        palavra = palavra.replace(np, '')
+    if len(palavra) == 0:
+        return ''
+    return choice(palavra[randint(0, len(palavra)-1)])
+
 def sorteia_letra (palavra, listar):
     cespecial = ['.', ',','-',';',' ']
     g = palavra.lower()
