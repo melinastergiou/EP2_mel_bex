@@ -3880,6 +3880,11 @@ print(adiciona_em_ordem("siria", 5919,
     ['japao', 13836]]))  
 
 # Checar se um país está em uma lista de países+distâncias
+
+
+
+
+# Está na Lista? (sucesso)
 def esta_na_lista(pais, listap):
   for p in listap:
     if p[0] == pais:
@@ -3887,23 +3892,8 @@ def esta_na_lista(pais, listap):
   
   return False 
 
-# Está na Lista? (sucesso)
-def esta_na_lista (pais, lista):
-        l =[]
-        i = 0
-        while i< len(lista):
-            paises = lista[i][0]
-            l.append(paises)
-            i = i + 1
-        if pais not in l:
-            return False
-        else:
-            return True
-  
+# Sorteia Letra com Restrições (sucesso)
 
-# Sorteia Letra com Restrições (em andamento)
-
-# Sucesso 
 def sorteia_letra (palavra, restritas):
     cespecial = ['.', ',', '-', ';', ' ']
     nl = cespecial + restritas
@@ -3914,14 +3904,4 @@ def sorteia_letra (palavra, restritas):
         return ''
     return choice(palavra[randint(0, len(palavra)-1)])
 
-def sorteia_letra (palavra, listar):
-    cespecial = ['.', ',','-',';',' ']
-    g = palavra.lower()
-    h = list(g)
-    letra = choice(h)
-    if letra not in listar and letra not in cespecial:
-        return letra
-    else:
-        return "" 
-    
 
