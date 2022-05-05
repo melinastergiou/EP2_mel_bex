@@ -3838,11 +3838,11 @@ dados_normalizados = normaliza_bp(DADOS)
 def sorteia_pais(dicp):
   paises = list(dicp.keys())
 
-  psort = random.choice(paises)
+  psort = choice(paises)
 
   return psort
 
-# Distância de Harversine
+# Distância de Harversine (sucesso)
 def haversine(raio, p1, l1, p2, l2):
   p1 = radians(p1)
   p2 = radians(p2)
