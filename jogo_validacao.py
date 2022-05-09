@@ -5,7 +5,18 @@ from math import *
 print('Bem vindo ao Country Discover!')
 
 
-paises = list(dados_normalizados.keys())
-pais = choice(paises)
+# Sorteia Pais e define suas variáveis
+pais = sorteia_pais(dados_normalizados)
+infopais = dados_normalizados[pais]
+print(infopais.keys())
 
-print (pais)
+l1 = infopais ['geo']['latitude']
+p1 = infopais['geo']['longitude']
+
+
+# Tentativas
+tentativas = 20
+
+# Palpite
+palpite = input('Qual o seu o palpite? ')
+
