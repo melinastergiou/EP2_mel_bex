@@ -3844,10 +3844,10 @@ def sorteia_pais(dicp):
 
 # Distância de Harversine (sucesso)
 def haversine(raio, p1, l1, p2, l2):
-  p1 = radians(p1)
-  p2 = radians(p2)
-  l1 = radians(l1)
-  l2 = radians(l2)
+  p1 = radians(p1) # latitude pais 1
+  p2 = radians(p2) # latitude pais 2
+  l1 = radians(l1) # longitude pais 1 
+  l2 = radians(l2) # longitude pais 2 
 
   a = sin((p2-p1)/2)**2
   b = cos(p1)*cos(p2)
