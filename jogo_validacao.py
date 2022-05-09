@@ -1,6 +1,7 @@
 from funcoes import *
 from random import *
-from math import * 
+from math import *
+ 
 #criar documento para impressão colorida e os jogadores etc
 print('Bem vindo ao Country Discover!')
 
@@ -19,4 +20,15 @@ tentativas = 20
 
 # Palpite
 palpite = input('Qual o seu o palpite? ')
+while palpite != pais:
+    # latitude, longitude pais palpite
+    infopalpite = dados_normalizados[palpite]
+    p2 = infopalpite["geo"]["longitude"]
+    l2 = infopalpite["geo"]["latitude"]
+    # distancia de pais --> palpite
+    distancia = haversine(EARTH_RADIUS, p1,l1,p2,l2) # tirar casas decimais
+    print (distancia)
+    
+
+    break 
 
