@@ -4,7 +4,7 @@ from random import*
 from math import * 
 from dados import * 
 # Normalizando bases de países (sucesso)
-print(DADOS)
+
 EARTH_RADIUS = 6371
 DADOS = {
   "asia": {
