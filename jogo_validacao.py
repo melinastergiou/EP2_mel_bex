@@ -1,6 +1,9 @@
+
+from distutils.log import info
 from funcoes import *
 from random import *
 from math import *
+from dicas import *
  
 #criar documento para impressão colorida e os jogadores etc
 print('Bem vindo ao Country Discover!')
@@ -9,7 +12,7 @@ print('Bem vindo ao Country Discover!')
 # Sorteia Pais e define suas variáveis
 pais = sorteia_pais(dados_normalizados)
 infopais = dados_normalizados[pais]
-print(infopais.keys())
+
 
 l1 = infopais ['geo']['latitude']
 p1 = infopais['geo']['longitude']
@@ -23,16 +26,15 @@ palpite = input('Qual o seu o palpite? ')
 while palpite != pais:
     # Palpite = DICA
     if palpite == "dica" or palpite =="dicas":
-
-        print (mercado de dicas) # fazer mercado de dicas       
-
+        # print (mercado de dicas) # fazer mercado de dicas       
         # escolhendo dica!
         dic_escolhida = input("Escolha sua opção [0|1|2|3|4|5]? ")
-        if fun_dica(dic_escolhida) == False:
+        if fun_dica(dic_escolhida, infopais, tentativas) == False:
             palpite = input('Qual o seu o palpite? ')
         else: 
+            print(fun_dica(dic_escolhida, infopais, tentativas))
 
-
+    
     # Palpite = PAÍS
     elif palpite in dados_normalizados:
         
