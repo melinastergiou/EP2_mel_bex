@@ -1,9 +1,10 @@
 
-from distutils.log import info
 from funcoes import *
 from random import *
 from math import *
 from dicas import *
+from dados_norm import * 
+
  
 #criar documento para impressão colorida e os jogadores etc
 print('Bem vindo ao Country Discover!')
