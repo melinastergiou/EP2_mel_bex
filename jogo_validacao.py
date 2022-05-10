@@ -31,9 +31,6 @@ while palpite != pais:
         if fun_dica(dic_escolhida) == False:
             palpite = input('Qual o seu o palpite? ')
         else: 
-            
-
-
 
 
     # Palpite = PAÍS
