@@ -21,14 +21,45 @@ tentativas = 20
 # Palpite
 palpite = input('Qual o seu o palpite? ')
 while palpite != pais:
-    # latitude, longitude pais palpite
-    infopalpite = dados_normalizados[palpite]
-    p2 = infopalpite["geo"]["longitude"]
-    l2 = infopalpite["geo"]["latitude"]
-    # distancia de pais --> palpite
-    distancia = haversine(EARTH_RADIUS, p1,l1,p2,l2) # tirar casas decimais
-    print (distancia)
-    
+    # Palpite = DICA
+    if palpite == "dica" or palpite =="dicas":
 
+
+    print (mercado de dicas) # fazer mercado de dicas       
+
+    # escolhendo dica!
+    dic_escolhida = input("Escolha sua opção [0|1|2|3|4|5]? ")
+
+    if dic_escolhida == "0":
+
+    if dic_escolhida == "1":
+
+    if dic_escolhida == "2":
+    
+    if dic_escolhida == "3":
+
+    if dic_escolhida == "4":
+
+    if dic_escolhida == "5":
+
+
+    # Palpite = PAÍS
+    elif palpite in dados_normalizados:
+        
+        # latitude, longitude pais palpite
+        infopalpite = dados_normalizados[palpite]
+        p2 = infopalpite["geo"]["longitude"]
+        l2 = infopalpite["geo"]["latitude"]
+        # distancia de pais --> palpite
+        distancia = haversine(EARTH_RADIUS, p1,l1,p2,l2) # tirar casas decimais
+        print (distancia)
+    
     break 
+
+
+
+    # pergunta = input("Jogar novamente? ")["S/N"]
+    # if pergunta == "S":
+
+
 
