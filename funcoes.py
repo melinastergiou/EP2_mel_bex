@@ -3899,4 +3899,48 @@ def sorteia_letra (palavra, restritas):
         return ''
     return choice(palavra[randint(0, len(palavra)-1)])
 
+# Função da Dica
+def fun_dica(ndica, infopais, tentativas):
+  dicas = [0, 1, 2, 3, 4, 5]
+
+  if ndica == '0':
+    return print(False), print(tentativas) 
+ 
+  elif ndica == '1' and tentativas >= 2:
+    cores_bandeirap = infopais['cor']
+    lcores = []
+    for cor in cores_bandeirap:
+      if cor > 0: 
+        lcores.append(cor)
+
+    tentativas -= 4 
+    return choice(lcores), tentativas 
+
+  elif ndica == '2' and tentativas >= 3:
+    capital = list(infopais['capital'])
+    tentativas -= 3
+    return choice(capital), tentativas
+    
+  elif ndica == '3' and tentativas >= 6:
+    area = infopais['area']
+    tentativas -= 6 
+    return area, tentativas 
+
+  elif ndica == '4' and tentativas >= 5:
+    pop = infopais['populacao'] 
+    tentativas -= 5 
+    return pop, tentativas 
+  
+  elif ndica == '5' and tentativas >= 7: 
+    cont = infopais['continente']
+    tentativas -= 7
+    return cont, tentativas 
+
+  elif int(ndica) not in dicas: 
+    return print('Opção inválida')
+
+  else:
+    return print('Você não possui tentativas suficientes para essa dica. ')
+
+
 

@@ -24,23 +24,16 @@ while palpite != pais:
     # Palpite = DICA
     if palpite == "dica" or palpite =="dicas":
 
+        print (mercado de dicas) # fazer mercado de dicas       
 
-    print (mercado de dicas) # fazer mercado de dicas       
+        # escolhendo dica!
+        dic_escolhida = input("Escolha sua opção [0|1|2|3|4|5]? ")
+        if fun_dica(dic_escolhida) == False:
+            palpite = input('Qual o seu o palpite? ')
+        else: 
+            
 
-    # escolhendo dica!
-    dic_escolhida = input("Escolha sua opção [0|1|2|3|4|5]? ")
 
-    if dic_escolhida == "0":
-
-    if dic_escolhida == "1":
-
-    if dic_escolhida == "2":
-    
-    if dic_escolhida == "3":
-
-    if dic_escolhida == "4":
-
-    if dic_escolhida == "5":
 
 
     # Palpite = PAÍS
