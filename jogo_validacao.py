@@ -35,7 +35,6 @@ while palpite != pais:
         else: 
             print(fun_dica(dic_escolhida, infopais, tentativas))
 
-    
     # Palpite = PAÍS
     elif palpite in dados_normalizados:
         
