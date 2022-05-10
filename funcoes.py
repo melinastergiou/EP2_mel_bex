@@ -3860,6 +3860,25 @@ def haversine(raio, p1, l1, p2, l2):
   return distancia 
 
 # Adicionando em uma Lista Ordenada (sucesso)
+def adiciona_em_ordem(pais, distancia, listapd):
+    elemento = [pais, distancia]
+    
+    if len(listapd) == 0:
+        listapd.append(elemento)
+    
+    i = 0 
+    for p in listapd:
+        if pais == p[0]:
+            return listapd 
+
+        elif distancia < p[1]:
+            listapd.insert(i, elemento)
+            return listapd 
+
+        i += 1 
+
+    listapd.append(elemento)
+    return listapd 
 
 
 # Está na Lista? (sucesso)
@@ -3882,7 +3901,7 @@ def sorteia_letra (palavra, restritas):
         return ''
     return choice(palavra[randint(0, len(palavra)-1)])
 
-# Função da Dica
+# Função da Dica (sucesso)
 def fun_dica(ndica, infopais, tentativas):
   dicas = [0, 1, 2, 3, 4, 5]
 
@@ -3890,24 +3909,25 @@ def fun_dica(ndica, infopais, tentativas):
     return print(False), print(tentativas) 
  
   elif ndica == '1' and tentativas >= 2:
-    cores_bandeirap = infopais['cor']
+    cores_bandeirap = infopais['bandeira']
     lcores = []
     for cor in cores_bandeirap:
-      if cor > 0: 
+      if cores_bandeirap[cor] > 0: 
         lcores.append(cor)
 
     tentativas -= 4 
     return choice(lcores), tentativas 
 
   elif ndica == '2' and tentativas >= 3:
-    capital = list(infopais['capital'])
+    capital = list(infopais['capital'].replace(' ', '').lower())
     tentativas -= 3
-    return choice(capital), tentativas
+    return choice(capital).lower(), tentativas
     
   elif ndica == '3' and tentativas >= 6:
     area = infopais['area']
     tentativas -= 6 
-    return area, tentativas 
+    areap = print('Área: {} km2'.format(area)) ### arrumar no print 
+    return area, tentativas  
 
   elif ndica == '4' and tentativas >= 5:
     pop = infopais['populacao'] 
