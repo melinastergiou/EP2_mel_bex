@@ -25,11 +25,18 @@ tentativas = 20
 mostradica = 'Dicas: '
 mostradist = 'Distâncias: '
 
+ptentados = []
 # Palpite
 palpite = input('Qual o seu o palpite? ')
-while palpite != pais:
+
+while palpite != pais and palpite not in ptentados:
     # Palpite = DICA
-    if palpite == "dica" or palpite =="dicas":
+    if palpite in ptentados:
+        palpite = input('Qual o seu o palpite? ') 
+
+    ptentados.append(palpite)
+
+    if palpite == "dica" or palpite == "dicas":
         # print (mercado de dicas) # fazer mercado de dicas       
         # escolhendo dica!
         dic_escolhida = input("Escolha sua opção [0|1|2|3|4|5]? ")
@@ -63,8 +70,6 @@ while palpite != pais:
 
 
     palpite = input('Qual o seu o palpite? ')
-
-
 
     # pergunta = input("Jogar novamente? ")["S/N"]
     # if pergunta == "S":
