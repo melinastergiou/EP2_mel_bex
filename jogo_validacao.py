@@ -49,6 +49,7 @@ while palpite != pais:
         distancia = haversine(EARTH_RADIUS, p1,l1,p2,l2) # tirar casas decimais
         print (distancia)
 
+    palpite = input('Qual o seu o palpite? ')
 
 
 
