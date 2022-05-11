@@ -31,6 +31,7 @@ palpite = input('Qual o seu o palpite? ')
 
 while palpite != pais and palpite not in ptentados:
     # Palpite = DICA
+
     if palpite in ptentados:
         palpite = input('Qual o seu o palpite? ') 
 
@@ -77,7 +78,23 @@ while palpite != pais and palpite not in ptentados:
             print("O país sorteado era {}...".format(pais))
             pergunta = input("Jogar novamente?[S/N] ").lower()
             if pergunta == "s":
-                break #TEM QUE RECOMEÇAR O JOGO E SORTEAR OUTRO PAÍS
+                # Sorteia Pais e define suas variáveis -- RECOMEÇA O JOGO
+                pais = sorteia_pais(dados_normalizados)
+                print(pais)
+                infopais = dados_normalizados[pais]
+
+                l1 = infopais ['geo']['latitude']
+                p1 = infopais['geo']['longitude']
+
+                # Tentativas
+                tentativas = 20
+                mostradica = 'Dicas: '
+                mostradist = 'Distâncias: '
+
+                ptentados = []
+                # Palpite
+                palpite = input('Qual o seu o palpite? ')
+            
             elif pergunta == "n":
                 print("É muito deselegante desistir... Até a próxima!")
         
