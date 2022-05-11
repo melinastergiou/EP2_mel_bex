@@ -47,7 +47,7 @@ while palpite != pais:
         l2 = infopalpite["geo"]["latitude"]
         # distancia de pais --> palpite
         distancia = haversine(EARTH_RADIUS, p1,l1,p2,l2) # tirar casas decimais
-        mostradist += '\n {} --> {} \n'.format(distancia, palpite) 
+        mostradist += '\n {} --> {}'.format(distancia, palpite) 
         print(mostradist)
         print(mostradica) 
 
