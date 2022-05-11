@@ -30,9 +30,10 @@ def fun_dica(ndica, infopais, tentativas):
   elif ndica == '3' and tentativas >= 6:
     area = infopais['area']
     tentativas -= 6 
-    areap = ('- Área: {:,} km2'.format(area).replace(",",".")) ### POR QUE ESTÁ DANDO DOIS PRINTS?????
+    areap = print ('- Área: {:,} km2'.format(area).replace(",",".")) ### POR QUE ESTÁ DANDO DOIS PRINTS?????
     ### DA PRA RETORNAR AREAP E NO TERMINAL DO JOGO DA PRINT BEXXX!!, MAS NÃO DA PRA DA PRA RETORNAR PRINT
-    return area, tentativas  
+    return areap
+    return tentativas  
 
   elif ndica == '4' and tentativas >= 5:
     pop = infopais['populacao'] 
