@@ -37,8 +37,7 @@ while palpite != pais:
         print(mostradist)
         print(mostradica) 
         print('Você tem {} tentativa(s) restante(s)'.format(num_tentativas(dic_escolhida, tentativas)))
-        palpite = input('Qual o seu o palpite? ')
-
+    
     # Palpite = PAÍS
     elif palpite in dados_normalizados:
         
