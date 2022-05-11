@@ -4,51 +4,57 @@ from random import*
 from math import * 
 from dados import * 
 
+
 # Função da Dica (sucesso)
-def fun_dica(ndica, infopais, tentativas):
+def fun_dica(ndica, infopais):
   dicas = [0, 1, 2, 3, 4, 5]
 
   if ndica == '0':
-    return print(False), print(tentativas) 
+    return ''
  
-  elif ndica == '1' and tentativas >= 2:
+  elif ndica == '1':
     cores_bandeirap = infopais['bandeira']
     lcores = []
     for cor in cores_bandeirap:
       if cores_bandeirap[cor] > 0: 
         lcores.append(cor)
 
-    tentativas -= 4 
-    return choice(lcores), tentativas 
+    return '- Cores da Bandeira: {}'.format(choice(lcores)) 
 
-  elif ndica == '2' and tentativas >= 3:
+  elif ndica == '2' :
     capital = list(infopais['capital'].replace(' ', '').lower())
-    tentativas -= 3
-    print("- Letras da capital: {}".format(choice(capital).lower()))
-    return choice(capital).lower(), tentativas
-    
-  elif ndica == '3' and tentativas >= 6:
-    area = infopais['area']
-    tentativas -= 6 
-    areap = print ('- Área: {:,} km2'.format(area).replace(",",".")) ### POR QUE ESTÁ DANDO DOIS PRINTS?????
-    ### DA PRA RETORNAR AREAP E NO TERMINAL DO JOGO DA PRINT BEXXX!!, MAS NÃO DA PRA DA PRA RETORNAR PRINT
-    return areap
-    return tentativas  
+    return "- Letras da capital: {}".format(choice(capital).lower())
 
-  elif ndica == '4' and tentativas >= 5:
+  elif ndica == '3':
+    area = infopais['area']
+    return 'Restam {} tentativas \n - Área: {:,} km2'.format(area).replace(",",".") 
+ 
+
+  elif ndica == '4':
     pop = infopais['populacao'] 
-    popterminal = print("- População: {:,} habitantes".format(pop).replace(",","."))
-    tentativas -= 5 
-    return pop, tentativas 
+    return  "- População: {:,} habitantes".format(pop).replace(",",".")
   
-  elif ndica == '5' and tentativas >= 7: 
+  elif ndica == '5': 
     cont = infopais['continente']
-    print("- Continente: {}".format(cont))
-    tentativas -= 7
-    return cont, tentativas 
+    return  "- Continente: {}".format(cont)
 
   elif int(ndica) not in dicas: 
-    return print('Opção inválida')
+    return 'Opção inválida'
 
   else:
-    return print('Você não possui tentativas suficientes para essa dica. ')
+    return 'Você não possui tentativas suficientes para essa dica. ' 
+
+def num_tentativas(ndica, tentativas):
+
+  if ndica == '1':
+    tentativas -= 4
+  elif ndica == '2':
+    tentativas -= 3
+  elif ndica == '3':
+    tentativas -= 6
+  elif ndica == '4':
+    tentativas -= 5
+  elif ndica == '5':
+    tentativas -= 7
+
+  return tentativas 
