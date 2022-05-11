@@ -36,7 +36,8 @@ while palpite != pais:
         mostradica += '\n {}'.format(fun_dica(dic_escolhida, infopais)) 
         print(mostradist)
         print(mostradica) 
-        print('Você tem {} tentativa(s) restante(s)'.format(num_tentativas(dic_escolhida, tentativas)))
+        tentativas = num_tentativas(dic_escolhida, tentativas)
+        print ('Você tem {} tentativa(s) restante(s)'.format(tentativas))
     
     # Palpite = PAÍS
     elif palpite in dados_normalizados:
