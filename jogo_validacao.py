@@ -69,7 +69,14 @@ while palpite != pais and palpite not in ptentados:
         print ('Você tem {} tentativa(s) restante(s)'.format(tentativas)) 
 
 
+    elif palpite == "desisto":
+        p_desistir= input('Deseja mesmo desistir?[S/N] ')
+        if p_desistir == "S":
+            break
+        if p_desistir == "N":
+
     palpite = input('Qual o seu o palpite? ')
+    
 
     # pergunta = input("Jogar novamente? ")["S/N"]
     # if pergunta == "S":
