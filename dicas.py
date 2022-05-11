@@ -61,3 +61,5 @@ def num_tentativas(ndica, tentativas):
 
   return False 
    
+
+#def deisitir (): ## SERÁ? FAZ SENTIDO CRIAR ISSO?

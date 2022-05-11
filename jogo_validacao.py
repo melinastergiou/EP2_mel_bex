@@ -70,15 +70,22 @@ while palpite != pais and palpite not in ptentados:
 
 
     elif palpite == "desisto":
-        p_desistir= input('Deseja mesmo desistir?[S/N] ')
-        if p_desistir == "S":
+        # Caso jogador desista
+        p_desistir= input('Tem certeza que deseja desistir?[S/N] ').lower()
+        
+        if p_desistir == "s":
+            print("O país sorteado era {}...".format(pais))
+            pergunta = input("Jogar novamente?[S/N] ")
+            if pergunta == "S":
+                break
+            if pergunta == "N":
+                print("É muito deselegante desistir... Até a próxima")
+       # Caso jogador não desista
+        if p_desistir == "n":
             break
-        if p_desistir == "N":
 
     palpite = input('Qual o seu o palpite? ')
-    
 
-    # pergunta = input("Jogar novamente? ")["S/N"]
     # if pergunta == "S":
 
 
