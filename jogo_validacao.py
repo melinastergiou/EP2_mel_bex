@@ -23,6 +23,7 @@ p1 = infopais['geo']['longitude']
 # Tentativas
 tentativas = 20
 mostradica = 'Dicas: '
+mostradist = 'Distâncias: '
 
 # Palpite
 palpite = input('Qual o seu o palpite? ')
@@ -33,6 +34,7 @@ while palpite != pais:
         # escolhendo dica!
         dic_escolhida = input("Escolha sua opção [0|1|2|3|4|5]? ")
         mostradica += '\n {}'.format(fun_dica(dic_escolhida, infopais)) 
+        print(mostradist)
         print(mostradica) 
         print('Você tem {} tentativa(s) restante(s)'.format(num_tentativas(dic_escolhida, tentativas)))
         palpite = input('Qual o seu o palpite? ')

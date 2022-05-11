@@ -27,8 +27,7 @@ def fun_dica(ndica, infopais):
 
   elif ndica == '3':
     area = infopais['area']
-    return 'Restam {} tentativas \n - Área: {:,} km2'.format(area).replace(",",".") 
- 
+    return '- Área: {:,} km2'.format(area).replace(",",".") 
 
   elif ndica == '4':
     pop = infopais['populacao'] 
