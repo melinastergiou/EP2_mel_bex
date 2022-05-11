@@ -33,11 +33,18 @@ while palpite != pais:
         # print (mercado de dicas) # fazer mercado de dicas       
         # escolhendo dica!
         dic_escolhida = input("Escolha sua opção [0|1|2|3|4|5]? ")
-        mostradica += '\n {}'.format(fun_dica(dic_escolhida, infopais)) 
-        print(mostradist)
-        print(mostradica) 
         tentativas = num_tentativas(dic_escolhida, tentativas)
-        print ('Você tem {} tentativa(s) restante(s)'.format(tentativas))
+        
+        if tentativas == False:
+            print(mostradist)
+            print(mostradica) 
+            print('Você não possui tentativas suficientes para essa dica. ')
+
+        else: 
+            mostradica += '\n {}'.format(fun_dica(dic_escolhida, infopais)) 
+            print(mostradist)
+            print(mostradica) 
+            print ('Você tem {} tentativa(s) restante(s)'.format(tentativas))
 
     
     # Palpite = PAÍS

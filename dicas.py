@@ -56,4 +56,8 @@ def num_tentativas(ndica, tentativas):
   elif ndica == '5':
     tentativas -= 7
 
-  return tentativas 
+  if tentativas >= 0:
+    return tentativas
+
+  return False 
+   
