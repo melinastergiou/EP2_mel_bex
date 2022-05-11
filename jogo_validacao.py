@@ -38,6 +38,7 @@ while palpite != pais:
         print(mostradica) 
         tentativas = num_tentativas(dic_escolhida, tentativas)
         print ('Você tem {} tentativa(s) restante(s)'.format(tentativas))
+
     
     # Palpite = PAÍS
     elif palpite in dados_normalizados:
@@ -50,7 +51,9 @@ while palpite != pais:
         distancia = haversine(EARTH_RADIUS, p1,l1,p2,l2) # tirar casas decimais
         mostradist += '\n {} --> {}'.format(distancia, palpite) 
         print(mostradist)
-        print(mostradica) 
+        print(mostradica)       
+        tentativas -= 1 
+        print ('Você tem {} tentativa(s) restante(s)'.format(tentativas)) 
 
 
     palpite = input('Qual o seu o palpite? ')
