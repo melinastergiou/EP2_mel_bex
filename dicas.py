@@ -60,6 +60,21 @@ def num_tentativas(ndica, tentativas):
     return tentativas
 
   return False 
+
+def exclui_dicas(ndica, dicas):
+  if ndica == '3':
+    x = dicas.index(3)
+    del(dicas[x])
+  elif ndica == '4':
+    x = dicas.index(4)
+    del(dicas[x])
+  elif ndica == '5':
+    x = dicas.index(5)
+    del(dicas[x])
+  return dicas 
+  
+
+
    
 
 #def deisitir (): ## SERÁ? FAZ SENTIDO CRIAR ISSO?

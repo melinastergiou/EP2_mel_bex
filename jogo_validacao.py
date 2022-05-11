@@ -22,25 +22,26 @@ p1 = infopais['geo']['longitude']
 
 # Tentativas
 tentativas = 20
+dicas = [0 , 1 , 2 , 3 , 4 , 5]
 mostradica = 'Dicas: '
 mostradist = 'Distâncias: '
 
 ptentados = []
 # Palpite
-palpite = input('Qual o seu o palpite? ')
+palpite = 'melbexlandia'
 
-while palpite != pais and palpite not in ptentados:
-    # Palpite = DICA
-
+while palpite != pais:
+    #SE ESTÁ TENTANDO O MESMO PAIS
     if palpite in ptentados:
         palpite = input('Qual o seu o palpite? ') 
+    else:
+        ptentados.append(palpite)
 
-    ptentados.append(palpite)
-
+    # Palpite = DICA/DICAS
     if palpite == "dica" or palpite == "dicas":
         # print (mercado de dicas) # fazer mercado de dicas       
         # escolhendo dica!
-        dic_escolhida = input("Escolha sua opção [0|1|2|3|4|5]? ")
+        dic_escolhida = input("Escolha sua opção {}? ".format(str(dicas)).replace(',', '|'))
         tentativas = num_tentativas(dic_escolhida, tentativas)
         
         if tentativas == False:
@@ -49,12 +50,13 @@ while palpite != pais and palpite not in ptentados:
             print('Você não possui tentativas suficientes para essa dica. ')
 
         else: 
-            mostradica += '\n {}'.format(fun_dica(dic_escolhida, infopais)) 
+            mostradica += '\n {}'.format(fun_dica(dic_escolhida, infopais))
+            dicas = exclui_dicas(dic_escolhida, dicas) 
             print(mostradist)
             print(mostradica) 
             print ('Você tem {} tentativa(s) restante(s)'.format(tentativas))
 
-    
+            
     # Palpite = PAÍS
     elif palpite in dados_normalizados:
         # latitude, longitude pais palpite
@@ -90,20 +92,21 @@ while palpite != pais and palpite not in ptentados:
                 tentativas = 20
                 mostradica = 'Dicas: '
                 mostradist = 'Distâncias: '
-
+                dicas = [0 , 1 , 2 , 3 , 4 , 5] 
                 ptentados = []
-                # Palpite
-                palpite = input('Qual o seu o palpite? ')
+
+
             
-            elif pergunta == "n":
+            elif pergunta == "n": # ACABA COM O JOGO
                 print("É muito deselegante desistir... Até a próxima!")
+                break
         
         if p_desistir == "n":
             print("Muito elegante! Bora continuar!")
 
     palpite = input('Qual o seu o palpite? ')
 
-    # if pergunta == "S":
+
 
 
 
