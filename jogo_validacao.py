@@ -49,14 +49,13 @@ while palpite != pais:
     
     # Palpite = PAÍS
     elif palpite in dados_normalizados:
-        
         # latitude, longitude pais palpite
         infopalpite = dados_normalizados[palpite]
         p2 = infopalpite["geo"]["longitude"]
         l2 = infopalpite["geo"]["latitude"]
         # distancia de pais --> palpite
         distancia = haversine(EARTH_RADIUS, p1,l1,p2,l2) # tirar casas decimais
-        mostradist += '\n {} --> {}'.format(distancia, palpite) 
+        mostradist += '\n {:.3f}km --> {}'.format(distancia, palpite) 
         print(mostradist)
         print(mostradica)       
         tentativas -= 1 
