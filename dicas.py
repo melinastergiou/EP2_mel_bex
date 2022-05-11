@@ -24,21 +24,25 @@ def fun_dica(ndica, infopais, tentativas):
   elif ndica == '2' and tentativas >= 3:
     capital = list(infopais['capital'].replace(' ', '').lower())
     tentativas -= 3
+    print("- Letras da capital: {}".format(choice(capital).lower()))
     return choice(capital).lower(), tentativas
     
   elif ndica == '3' and tentativas >= 6:
     area = infopais['area']
     tentativas -= 6 
-    areap = print('Área: {} km2'.format(area)) ### arrumar no print 
+    areap = ('- Área: {:,} km2'.format(area).replace(",",".")) ### POR QUE ESTÁ DANDO DOIS PRINTS?????
+    ### DA PRA RETORNAR AREAP E NO TERMINAL DO JOGO DA PRINT BEXXX!!, MAS NÃO DA PRA DA PRA RETORNAR PRINT
     return area, tentativas  
 
   elif ndica == '4' and tentativas >= 5:
     pop = infopais['populacao'] 
+    popterminal = print("- População: {:,} habitantes".format(pop).replace(",","."))
     tentativas -= 5 
     return pop, tentativas 
   
   elif ndica == '5' and tentativas >= 7: 
     cont = infopais['continente']
+    print("- Continente: {}".format(cont))
     tentativas -= 7
     return cont, tentativas 
 
