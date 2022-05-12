@@ -1,5 +1,4 @@
 
-from sympy import N
 from funcoes import *
 from random import *
 from math import *
