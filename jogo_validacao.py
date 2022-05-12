@@ -138,6 +138,37 @@ while palpite != pais:
 
     palpite = input('Qual o seu o palpite? ')
 
+print('Você acertou o País!! O pais sorteado era mesmo {}'.format(pais))
+voltar = input('Você deseja jogar novamente? (S/N)')
+if voltar == 'S' or voltar == 's':
+    pais = sorteia_pais(dados_normalizados)
+    print(pais)
+    infopais = dados_normalizados[pais]
+
+    l1 = infopais ['geo']['latitude']
+    p1 = infopais['geo']['longitude']
+
+    # Tentativas
+    tentativas = 20
+    mostradica = 'Dicas: '
+    mostradist = 'Distâncias: '
+    dicas = [0 , 1 , 2 , 3 , 4 , 5] 
+    ptentados = []
+    # PRINTS - Apresentação do jogo
+    print(' =============================')
+    print('|         Bem vindo ao        |')
+    print('|       Country Discover!     | ')
+    print(' =============================\n')
+    # - Regras do jogo:
+    print('Regras do Jogo e Comandos:')
+    print('dica/dicas ----> Abre o Mercado de dicas')
+    print('desisto    ----> Desiste da rodada')
+    print('inventário ----> Exibe a sua posição \n')
+    palpite = input('Qual o seu o palpite? ') 
+
+else:
+    print('Fim de jogo. Parabéns!') 
+        
 
 
 
