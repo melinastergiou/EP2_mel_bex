@@ -91,6 +91,8 @@ while palpite != pais:
         tentativas -= 1 
         print ('Você tem {} tentativa(s) restante(s)'.format(tentativas)) 
 
+    elif palpite not in dados_normalizados and palpite!='desisto' and palpite!='dica' and palpite!='dicas':
+        print('Opção inválida')
 
     elif palpite == "desisto":
         # Caso jogador desista
