@@ -43,8 +43,8 @@ ptentados = []
 palpite = 'melbexlandia'
 
 while palpite != pais:
-    #SE ESTÁ TENTANDO O MESMO PAIS
-    if palpite in ptentados:
+    # SE ESTÁ TENTANDO O MESMO PAIS
+    if palpite != "dica" or palpite!="dicas" and palpite in ptentados:
         palpite = input('Qual o seu o palpite? ') 
     else:
         ptentados.append(palpite)
@@ -126,18 +126,19 @@ while palpite != pais:
                 print('desisto    ----> Desiste da rodada')
                 print('inventário ----> Exibe a sua posição \n')
 
-
-            
             elif pergunta == "n": # ACABA COM O JOGO
                 print("É muito deselegante desistir... Até a próxima!")
                 break
-        
+
         if p_desistir == "n":
             print("Muito elegante! Bora continuar!")
 
-    palpite = input('Qual o seu o palpite? ')
+    # BEEEEX ARRUMEI PALPITE TEM QUE SER QUALQUER COISA PRO NOSSO WHILE RODAR DE NOVO!!!    
+    palpite = 1 
 
 print('Você acertou o País!! O pais sorteado era mesmo {}'.format(pais))
+
+# JOGANDO NOVAMENTE APÓS ACERTO
 voltar = input('Você deseja jogar novamente? (S/N)')
 if voltar == 'S' or voltar == 's':
     pais = sorteia_pais(dados_normalizados)
@@ -170,5 +171,10 @@ else:
         
 
 
+# Cor
+# DICA NÃO REPETÍVEL 
+# PROBLEMA DICA DUAS VEZES
+# LETRA PAÍS, COR PAÍS APPEND COM VÍRGULAS 
+# 
 
 
