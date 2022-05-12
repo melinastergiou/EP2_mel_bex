@@ -170,11 +170,14 @@ else:
     print('Fim de jogo. Parabéns!') 
         
 
+# PRIORIDADES!
+# Dica não repetível
+# caso cores de dica disponíveis acabem!!
+# caso letras de capital disponíveis acabem!! --> espina falou de len
 
+# AJUSTES
 # Cor
-# DICA NÃO REPETÍVEL 
-# PROBLEMA DICA DUAS VEZES
 # LETRA PAÍS, COR PAÍS APPEND COM VÍRGULAS 
-# 
+
 
 
