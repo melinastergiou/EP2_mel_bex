@@ -24,13 +24,13 @@ p1 = infopais['geo']['longitude']
 print(' =============================')
 print('|         Bem vindo ao        |')
 print('|       Country Discover!     | ')
-print(' =============================')
+print(' =============================\n')
 
 # - Regras do jogo:
 print('Regras do Jogo e Comandos:')
 print('dica/dicas ----> Abre o Mercado de dicas')
 print('desisto    ----> Desiste da rodada')
-print('inventário ----> Exibe a sua posição')
+print('inventário ----> Exibe a sua posição\n')
 
 
 # Tentativas
@@ -62,7 +62,7 @@ while palpite != pais:
         print('| 4. População        --> custa 5 tentativas  |')
         print('| 5. Continente       --> custa 4 tentativas  |')
         print('| 0. Desistir da dica                         |')
-        print(' =============================================')
+        print(' =============================================\n')
         dic_escolhida = input("Escolha sua opção {}? ".format(str(dicas)).replace(',', '|'))
         tentativas = num_tentativas(dic_escolhida, tentativas)
         
@@ -116,6 +116,16 @@ while palpite != pais:
                 mostradist = 'Distâncias: '
                 dicas = [0 , 1 , 2 , 3 , 4 , 5] 
                 ptentados = []
+                # PRINTS - Apresentação do jogo
+                print(' =============================')
+                print('|         Bem vindo ao        |')
+                print('|       Country Discover!     | ')
+                print(' =============================\n')
+                # - Regras do jogo:
+                print('Regras do Jogo e Comandos:')
+                print('dica/dicas ----> Abre o Mercado de dicas')
+                print('desisto    ----> Desiste da rodada')
+                print('inventário ----> Exibe a sua posição \n')
 
 
             
