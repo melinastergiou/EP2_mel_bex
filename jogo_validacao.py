@@ -1,4 +1,5 @@
 
+from sympy import N
 from funcoes import *
 from random import *
 from math import *
@@ -18,6 +19,9 @@ infopais = dados_normalizados[pais]
 
 l1 = infopais ['geo']['latitude']
 p1 = infopais['geo']['longitude']
+
+# PRINTS
+
 
 
 # Tentativas
@@ -41,6 +45,15 @@ while palpite != pais:
     if palpite == "dica" or palpite == "dicas":
         # print (mercado de dicas) # fazer mercado de dicas       
         # escolhendo dica!
+        print(' =============================================')
+        print('| Mercado de Dicas:                           |')
+        print('| 1. Cor da Bandeira  --> custa 4 tentativas  |')
+        print('| 2. Letra da Capital --> custa 3 tentativas  |')
+        print('| 3. Área             --> custa 6 tentativas  |')
+        print('| 4. População        --> custa 5 tentativas  |')
+        print('| 5. Continente       --> custa 4 tentativas  |')
+        print('| 0. Desistir da dica                         |')
+        print(' =============================================')
         dic_escolhida = input("Escolha sua opção {}? ".format(str(dicas)).replace(',', '|'))
         tentativas = num_tentativas(dic_escolhida, tentativas)
         
