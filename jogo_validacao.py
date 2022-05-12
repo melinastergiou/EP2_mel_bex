@@ -20,8 +20,17 @@ infopais = dados_normalizados[pais]
 l1 = infopais ['geo']['latitude']
 p1 = infopais['geo']['longitude']
 
-# PRINTS
+# PRINTS - Apresentação do jogo
+print(' =============================')
+print('|         Bem vindo ao        |')
+print('|       Country Discover!     | ')
+print(' =============================')
 
+# - Regras do jogo:
+print('Regras do Jogo e Comandos:')
+print('dica/dicas ----> Abre o Mercado de dicas')
+print('desisto    ----> Desiste da rodada')
+print('inventário ----> Exibe a sua posição')
 
 
 # Tentativas
