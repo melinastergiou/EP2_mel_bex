@@ -33,8 +33,7 @@ print('inventário ----> Exibe a sua posição\n')
 
 # Tentativas
 tentativas = 20
-dicas = [0 , 1 , 2 , 3 , 4 , 5]
-print(dicas) 
+dicas = [0 , 1 , 2 , 3 , 4 , 5] 
 mostradica = 'Dicas: '
 mostradist = 'Distâncias: '
 
@@ -75,7 +74,6 @@ while palpite != pais:
             print(RED + 'Você não possui tentativas suficientes para essa dica. ' + RESET) # COR
 
         else: 
-            print(dicas)
             if fun_dica(dic_escolhida, infopais, dicas) == '':
                 print('Você já usou essa dica.')
             elif fun_dica(dic_escolhida, infopais, dicas) ==  RED + 'Você não possui tentativas suficientes para essa dica. ' + RESET:
@@ -83,8 +81,7 @@ while palpite != pais:
             else: 
                 mostradica += '\n {}'.format(fun_dica(dic_escolhida, infopais, dicas))
                 dicas = exclui_dicas(dic_escolhida, dicas) 
-                
-            print(dicas) 
+            
             print(mostradist)
             print(mostradica) 
             print ('Você tem ' + CYAN + '{}'.format(tentativas) + RESET + ' tentativa(s) restante(s)') # COR
