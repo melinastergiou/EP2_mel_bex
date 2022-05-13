@@ -23,7 +23,10 @@ def fun_dica(ndica, infopais):
 
   elif ndica == '2' :
     capital = list(infopais['capital'].replace(' ', '').lower())
-    return "- Letras da capital: {}".format(choice(capital).lower())
+    a = choice(capital) # tentei arrumar aqui mel
+    i = capital.index(a)
+    capital.pop(i)
+    return "- Letras da capital: {}".format(a.lower())
 
   elif ndica == '3':
     area = infopais['area']
