@@ -165,7 +165,7 @@ while palpite != pais:
             print("Muito elegante! Bora continuar!")
 
     # BEEEEX ARRUMEI PALPITE TEM QUE SER QUALQUER COISA PRO NOSSO WHILE RODAR DE NOVO!!!    
-    palpite = input('Qual o seu o palpite? ') 
+    palpite = 1
 
 print('Você acertou o País!! O pais sorteado era mesmo {}'.format(pais))
 
