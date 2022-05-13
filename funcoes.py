@@ -48,7 +48,6 @@ def haversine(raio, p1, l1, p2, l2):
   return distancia 
 
 # Adicionando em uma Lista Ordenada (sucesso)
-# palpite, distancia haversine, lista_pchutados
 def adiciona_em_ordem(pais, distancia, listapd):
     elemento = [pais, distancia]
     
