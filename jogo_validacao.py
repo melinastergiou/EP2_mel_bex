@@ -90,7 +90,7 @@ while palpite != pais:
         l2 = infopalpite["geo"]["latitude"]
 
         if palpite in ptentados:
-            palpite = input('Esse país já foi... tente denovo \nQual o seu o palpite? ') 
+            print('Esse país já foi... tente denovo')  
         else: 
             ptentados.append(palpite)
             infopalpite = dados_normalizados[palpite]
