@@ -175,7 +175,7 @@ else:
 # Dica não repetível
 # caso cores de dica disponíveis acabem!!
 # caso letras de capital disponíveis acabem!! --> espina falou de len
-
+# Arrumar para quando o pais da certo --> esta dando distância de harversine = 0km e não que a pessoa ganhou!! 
 # AJUSTES
 # Cor
 # LETRA PAÍS, COR PAÍS APPEND COM VÍRGULAS 
