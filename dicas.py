@@ -15,12 +15,12 @@ REVERSE = "\033[;7m"
 
 
 # Função da Dica (sucesso)
-def fun_dica(ndica, infopais):
-  dicas = [0, 1, 2, 3, 4, 5]
+def fun_dica(ndica, infopais, dicas):
+  x = int(ndica)
 
   if ndica == '0':
     return ''
- 
+
   elif ndica == '1':
     cores_bandeirap = infopais['bandeira']
     lcores = []
@@ -48,10 +48,10 @@ def fun_dica(ndica, infopais):
   elif ndica == '5': 
     cont = infopais['continente']
     return  "- Continente: {}".format(cont)
-
-  elif int(ndica) not in dicas: 
-    return RED + 'Opção inválida' + RESET 
-
+  
+  elif x not in dicas:
+    return ''
+  
   else:
     return RED + 'Você não possui tentativas suficientes para essa dica. ' + RESET
 
@@ -74,6 +74,9 @@ def num_tentativas(ndica, tentativas):
   return False 
 
 def exclui_dicas(ndica, dicas):
+  x = int(ndica)
+  if x not in dicas: 
+    return dicas 
   if ndica == '3':
     x = dicas.index(3)
     del(dicas[x])
