@@ -34,13 +34,13 @@ print('inventário ----> Exibe a sua posição\n')
 # Tentativas
 tentativas = 20
 dicas = [0 , 1 , 2 , 3 , 4 , 5] 
-mostradica = 'Dicas: '
-mostradist = 'Distâncias: '
+mostradica = '\n'+'Dicas: '
+mostradist = '\n'+'Distâncias: '
 
 ptentados = []
 pchutes = []
 # Palpite para rodar, tive que fazer esse ser funcional 
-palpite = input('Qual o seu o palpite? ') 
+palpite = input('\n'+'Qual o seu o palpite? ') 
 
 while palpite != pais:
     # SE ESTÁ TENTANDO O MESMO PAIS
@@ -85,7 +85,7 @@ while palpite != pais:
             
             print(mostradist)
             print(mostradica) 
-            print ('Você tem ' + CYAN + '{}'.format(tentativas) + RESET + ' tentativa(s) restante(s)') # COR
+            print ('\n'+'Você tem ' + CYAN + '{}'.format(tentativas) + RESET + ' tentativa(s) restante(s)') # COR
 
             
     # Palpite = PAÍS
@@ -115,7 +115,7 @@ while palpite != pais:
                     print(GREEN + '{:.3f} km --> {}'.format(pais[1], pais[0]) + RESET)
             print(mostradica)       
             tentativas -= 1 
-            print ('Você tem ' + CYAN + '{}'.format(tentativas) + RESET + ' tentativa(s) restante(s)') # COR
+            print ('\n'+'Você tem ' + CYAN + '{}'.format(tentativas) + RESET + ' tentativa(s) restante(s)') # COR
 
     elif palpite == "desisto":
         # Caso jogador desista
@@ -135,8 +135,8 @@ while palpite != pais:
 
                 # Tentativas
                 tentativas = 20
-                mostradica = 'Dicas: '
-                mostradist = 'Distâncias: '
+                mostradica = '\n'+'Dicas: '
+                mostradist = '\n'+'Distâncias: '
                 dicas = [0 , 1 , 2 , 3 , 4 , 5] 
                 ptentados = []
                 pchutes = [] 
@@ -158,10 +158,21 @@ while palpite != pais:
         if p_desistir == "n":
             print("Muito elegante! Bora continuar!")
 
+    elif palpite == 'inventario':
+        print(mostradist)
+        for pais in pchutes:
+            if pais[1] >= 2*(EARTH_RADIUS):
+                print(RED + '{:.3f} km --> {}'.format(pais[1], pais[0]) + RESET)
+            elif pais[1] < 2*(EARTH_RADIUS) and pais[1] >= EARTH_RADIUS:
+                print(YELLOW + '{:.3f} km --> {}'.format(pais[1], pais[0]) + RESET)  
+            elif pais[1] < EARTH_RADIUS:
+                print(GREEN + '{:.3f} km --> {}'.format(pais[1], pais[0]) + RESET)
+        print(mostradica)    
+
     # BEEEEX ARRUMEI PALPITE TEM QUE SER QUALQUER COISA PRO NOSSO WHILE RODAR DE NOVO!!! 
     else:
         print(RED + 'Opção inválida' + RESET) # COR   
-    palpite = input('Qual o seu o palpite? ') 
+    palpite = input('\n' + 'Qual o seu o palpite? ') 
 
 print('Você acertou o País!! O pais sorteado era mesmo {}'.format(pais))
 
@@ -177,8 +188,8 @@ if voltar == 'S' or voltar == 's':
 
     # Tentativas
     tentativas = 20
-    mostradica = 'Dicas: '
-    mostradist = 'Distâncias: '
+    mostradica = '\n'+'Dicas: '
+    mostradist = '\n'+'Distâncias: '
     dicas = [0 , 1 , 2 , 3 , 4 , 5] 
     ptentados = []
     pchutes = [] 
@@ -192,7 +203,7 @@ if voltar == 'S' or voltar == 's':
     print('dica/dicas ----> Abre o Mercado de dicas')
     print('desisto    ----> Desiste da rodada')
     print('inventário ----> Exibe a sua posição \n')
-    palpite = input('Qual o seu o palpite? ') 
+    palpite = input('\n'+'Qual o seu o palpite? ') 
 
 else:
     print(BLUE + 'Fim de jogo. Parabéns!' + RESET) 
