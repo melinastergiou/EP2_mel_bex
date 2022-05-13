@@ -202,6 +202,8 @@ else:
 # Cor
 # LETRA PAÍS, COR PAÍS APPEND COM VÍRGULAS 
 # ordem da distância de harversine
+# tirar o outras das cores
+# append as dicas na ordem que elas aparecem no mercado ? 
 
 
 
