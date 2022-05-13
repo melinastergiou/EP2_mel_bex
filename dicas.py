@@ -77,7 +77,7 @@ def exclui_dicas(ndica, dicas):
   x = int(ndica)
   if x not in dicas: 
     return dicas 
-  if ndica == '3':
+  elif ndica == '3':
     x = dicas.index(3)
     del(dicas[x])
   elif ndica == '4':

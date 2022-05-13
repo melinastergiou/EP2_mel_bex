@@ -82,8 +82,8 @@ while palpite != pais:
                 print(fun_dica(dic_escolhida, infopais, dicas))
             else: 
                 mostradica += '\n {}'.format(fun_dica(dic_escolhida, infopais, dicas))
-            
-            dicas = exclui_dicas(dic_escolhida, dicas) 
+                dicas = exclui_dicas(dic_escolhida, dicas) 
+                
             print(dicas) 
             print(mostradist)
             print(mostradica) 
