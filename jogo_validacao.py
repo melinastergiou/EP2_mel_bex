@@ -77,7 +77,7 @@ while palpite != pais:
         else: 
             if fun_dica(dic_escolhida, infopais, dicas) == '':
                 print('Você já usou essa dica.')
-            elif fun_dica(dic_escolhida, infopais, dicas) ==  RED + 'Você não possui tentativas suficientes para essa dica. ' + RESET:
+            elif fun_dica(dic_escolhida, infopais, dicas) ==  RED + '\n Você não possui tentativas suficientes para essa dica. ' + RESET:
                 print(fun_dica(dic_escolhida, infopais, dicas))
             else: 
                 mostradica += '\n {}'.format(fun_dica(dic_escolhida, infopais, dicas))
@@ -119,7 +119,7 @@ while palpite != pais:
 
     elif palpite == "desisto":
         # Caso jogador desista
-        p_desistir= input('Tem certeza que deseja desistir?[S/N] ').lower()
+        p_desistir= input('\nTem certeza que deseja desistir?[S/N] ').lower()
         
         if p_desistir == "s":
             print("O país sorteado era {}...".format(pais))
@@ -152,11 +152,11 @@ while palpite != pais:
                 print('inventário ----> Exibe a sua posição \n')
 
             elif pergunta == "n": # ACABA COM O JOGO
-                print("É muito deselegante desistir... Até a próxima!")
+                print("\nÉ muito deselegante desistir... Até a próxima!")
                 break
 
         if p_desistir == "n":
-            print("Muito elegante! Bora continuar!")
+            print("\nMuito elegante! Bora continuar!")
 
     elif palpite == 'inventario':
         print(mostradist)
@@ -174,7 +174,7 @@ while palpite != pais:
         print(RED + 'Opção inválida' + RESET) # COR   
     palpite = input('\n' + 'Qual o seu o palpite? ') 
 
-print('Você acertou o País!! O pais sorteado era mesmo {}'.format(pais))
+print('\nVocê acertou o País!! O pais sorteado era mesmo {}'.format(pais))
 
 # JOGANDO NOVAMENTE APÓS ACERTO
 voltar = input('Você deseja jogar novamente? (S/N)')
