@@ -4,6 +4,15 @@ from random import*
 from math import * 
 from dados import * 
 
+# CORES
+RED   = "\033[1;31m"  
+BLUE  = "\033[1;34m"
+CYAN  = "\033[1;36m"
+GREEN = "\033[0;32m"
+RESET = "\033[0;0m"
+BOLD    = "\033[;1m"
+REVERSE = "\033[;7m" 
+
 
 # Função da Dica (sucesso)
 def fun_dica(ndica, infopais):
@@ -41,7 +50,7 @@ def fun_dica(ndica, infopais):
     return  "- Continente: {}".format(cont)
 
   elif int(ndica) not in dicas: 
-    return 'Opção inválida'
+    return RED + 'Opção inválida' + RESET 
 
   else:
     return 'Você não possui tentativas suficientes para essa dica. ' 
