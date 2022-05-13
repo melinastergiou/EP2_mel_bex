@@ -34,11 +34,11 @@ print('inventário ----> Exibe a sua posição\n')
 # Tentativas
 tentativas = 20
 dicas = [0 , 1 , 2 , 3 , 4 , 5]
+print(dicas) 
 mostradica = 'Dicas: '
 mostradist = 'Distâncias: '
 
 ptentados = []
-print(ptentados) 
 # Palpite para rodar, tive que fazer esse ser funcional 
 palpite = input('Qual o seu o palpite? ') 
 
@@ -75,8 +75,16 @@ while palpite != pais:
             print(RED + 'Você não possui tentativas suficientes para essa dica. ' + RESET) # COR
 
         else: 
-            mostradica += '\n {}'.format(fun_dica(dic_escolhida, infopais))
+            print(dicas)
+            if fun_dica(dic_escolhida, infopais, dicas) == '':
+                print('Você já usou essa dica.')
+            elif fun_dica(dic_escolhida, infopais, dicas) ==  RED + 'Você não possui tentativas suficientes para essa dica. ' + RESET:
+                print(fun_dica(dic_escolhida, infopais, dicas))
+            else: 
+                mostradica += '\n {}'.format(fun_dica(dic_escolhida, infopais, dicas))
+            
             dicas = exclui_dicas(dic_escolhida, dicas) 
+            print(dicas) 
             print(mostradist)
             print(mostradica) 
             print ('Você tem ' + CYAN + '{}'.format(tentativas) + RESET + ' tentativa(s) restante(s)') # COR
@@ -103,9 +111,6 @@ while palpite != pais:
             print(mostradica)       
             tentativas -= 1 
             print ('Você tem ' + CYAN + '{}'.format(tentativas) + RESET + ' tentativa(s) restante(s)') # COR
-
-    elif palpite not in dados_normalizados and palpite!='desisto' and palpite!='dica' and palpite!='dicas':
-        print(RED + 'Opção inválida' + RESET) # COR
 
     elif palpite == "desisto":
         # Caso jogador desista
@@ -147,7 +152,9 @@ while palpite != pais:
         if p_desistir == "n":
             print("Muito elegante! Bora continuar!")
 
-    # BEEEEX ARRUMEI PALPITE TEM QUE SER QUALQUER COISA PRO NOSSO WHILE RODAR DE NOVO!!!    
+    # BEEEEX ARRUMEI PALPITE TEM QUE SER QUALQUER COISA PRO NOSSO WHILE RODAR DE NOVO!!! 
+    else:
+        print(RED + 'Opção inválida' + RESET) # COR   
     palpite = input('Qual o seu o palpite? ') 
 
 print('Você acertou o País!! O pais sorteado era mesmo {}'.format(pais))
