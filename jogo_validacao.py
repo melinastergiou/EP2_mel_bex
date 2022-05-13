@@ -102,8 +102,9 @@ while palpite != pais:
             p2 = infopalpite["geo"]["longitude"]
             l2 = infopalpite["geo"]["latitude"]
             # distancia de pais --> palpite
-            distancia = haversine(EARTH_RADIUS, p1,l1,p2,l2) # tirar casas decimais
-            mostradist += '\n {:.3f}km --> {}'.format(distancia, palpite) 
+            distancia = cor_haversine(haversine(EARTH_RADIUS, p1,l1,p2,l2), EARTH_RADIUS)
+            
+            mostradist += '\n {}km --> {}'.format(distancia, palpite) 
             print(mostradist)
             print(mostradica)       
             tentativas -= 1 
@@ -189,7 +190,7 @@ else:
         
 
 # PRIORIDADES!
-# Dica não repetível
+
 # caso cores de dica disponíveis acabem!!
 # caso letras de capital disponíveis acabem!! --> espina falou de len -- Useiiii
 # Arrumar para quando o pais da certo --> esta dando distância de harversine = 0km e não que a pessoa ganhou!! --> resolvi

@@ -1,5 +1,6 @@
 # FUNÇÕES BASE DO EP2
 # Importando bibliotecas
+from cgitb import reset
 from random import*
 from math import * 
 from dados import * 
@@ -12,6 +13,8 @@ GREEN = "\033[0;32m"
 RESET = "\033[0;0m"
 BOLD    = "\033[;1m"
 REVERSE = "\033[;7m" 
+YELLOW = "\033[;33m"
+MAGENTA = "\033[;35m"
 
 
 # Função da Dica (sucesso)
@@ -88,6 +91,21 @@ def exclui_dicas(ndica, dicas):
       x = dicas.index(5)
       del(dicas[x])
     return dicas 
+
+def cor_haversine(distancia, EARTH_RADIUS):
+  distancia1 = str(distancia)
+  if distancia<= 2*(EARTH_RADIUS) and distancia> (3/4)*(2*EARTH_RADIUS):
+    return RED + distancia1 + RESET
+  elif distancia < (3/4)*(2*EARTH_RADIUS) and distancia>= (EARTH_RADIUS):
+    return YELLOW + distancia1 + RESET
+  elif distancia < (EARTH_RADIUS) and distancia>= (3/4)*(EARTH_RADIUS):
+    return MAGENTA + distancia1 + RESET 
+  elif distancia < (3/4)*(EARTH_RADIUS) and distancia> 0:
+    return GREEN + distancia1 + RESET
+
+
+#def ordem_haversine(distancia):
+
     
 
 
