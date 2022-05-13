@@ -93,7 +93,9 @@ def exclui_dicas(ndica, dicas):
     return dicas 
 
 def cor_haversine(distancia, EARTH_RADIUS):
+  
   distancia1 = str(distancia)
+
   if distancia<= 2*(EARTH_RADIUS) and distancia> (3/4)*(2*EARTH_RADIUS):
     return RED + distancia1 + RESET
   elif distancia < (3/4)*(2*EARTH_RADIUS) and distancia>= (EARTH_RADIUS):
