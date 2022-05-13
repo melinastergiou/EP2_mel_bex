@@ -94,23 +94,18 @@ def exclui_dicas(ndica, dicas):
 
 def cor_haversine(distancia, EARTH_RADIUS):
   
-  distancia1 = str(distancia)
+  
 
-  if distancia<= 2*(EARTH_RADIUS) and distancia> (3/4)*(2*EARTH_RADIUS):
-    return RED + distancia1 + RESET
-  elif distancia < (3/4)*(2*EARTH_RADIUS) and distancia>= (EARTH_RADIUS):
-    return YELLOW + distancia1 + RESET
+  if distancia >= 2*(EARTH_RADIUS):
+    return RED + '{:.3f}'.format(distancia) + " Km" + RESET
+  elif distancia <= (3/4)*(2*EARTH_RADIUS) and distancia>= (EARTH_RADIUS):
+    return YELLOW + '{:.3f}'.format(distancia) + " Km" + RESET
   elif distancia < (EARTH_RADIUS) and distancia>= (3/4)*(EARTH_RADIUS):
-    return MAGENTA + distancia1 + RESET 
-  elif distancia < (3/4)*(EARTH_RADIUS) and distancia> 0:
-    return GREEN + distancia1 + RESET
+    return MAGENTA + '{:.3f}'.format(distancia) + " Km" + RESET 
+  elif distancia < (3/4)*(EARTH_RADIUS):
+    return GREEN + '{:.3f}'.format(distancia) + " Km" + RESET
 
 
 #def ordem_haversine(distancia):
 
     
-
-
-   
-
-#def deisitir (): ## SERÁ? FAZ SENTIDO CRIAR ISSO?

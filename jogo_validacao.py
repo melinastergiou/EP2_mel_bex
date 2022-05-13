@@ -102,9 +102,9 @@ while palpite != pais:
             p2 = infopalpite["geo"]["longitude"]
             l2 = infopalpite["geo"]["latitude"]
             # distancia de pais --> palpite
-            distancia = cor_haversine(haversine(EARTH_RADIUS, p1,l1,p2,l2), EARTH_RADIUS)
-            
-            mostradist += '\n {}km --> {}'.format(distancia, palpite) 
+            haversine1 = haversine(EARTH_RADIUS, p1,l1,p2,l2)
+            distancia = cor_haversine(haversine1, EARTH_RADIUS)
+            mostradist += '\n {} --> {}'.format(distancia, palpite) 
             print(mostradist)
             print(mostradica)       
             tentativas -= 1 
