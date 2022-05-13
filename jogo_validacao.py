@@ -38,6 +38,7 @@ mostradica = 'Dicas: '
 mostradist = 'Distâncias: '
 
 ptentados = []
+print(ptentados) 
 # Palpite para rodar, tive que fazer esse ser funcional 
 palpite = input('Qual o seu o palpite? ') 
 
@@ -88,16 +89,6 @@ while palpite != pais:
         p2 = infopalpite["geo"]["longitude"]
         l2 = infopalpite["geo"]["latitude"]
 
-        # adicionando palpite a lista de tentados
-        ptentados.append(palpite)
-
-        # distancia de pais --> palpite
-        distancia = haversine(EARTH_RADIUS, p1,l1,p2,l2) # tirar casas decimais
-        mostradist += '\n {:.3f}km --> {}'.format(distancia, palpite) 
-        print(mostradist)
-        print(mostradica)       
-        tentativas -= 1 
-        print ('Você tem {} tentativa(s) restante(s)'.format(tentativas)) 
         if palpite in ptentados:
             palpite = input('Esse país já foi... tente denovo \nQual o seu o palpite? ') 
         else: 
