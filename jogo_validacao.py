@@ -39,6 +39,8 @@ mostradist = '\n'+'Distâncias: '
 
 ptentados = []
 pchutes = []
+coresdica =[]
+letrasdica =[]
 # Palpite para rodar, tive que fazer esse ser funcional 
 palpite = input('\n'+'Qual o seu o palpite? ') 
 
@@ -75,16 +77,39 @@ while palpite != pais:
             print(RED + 'Você não possui tentativas suficientes para essa dica. ' + RESET) # COR
 
         else: 
-            if fun_dica(dic_escolhida, infopais, dicas) == '':
-                print('Você já usou essa dica.')
-            elif fun_dica(dic_escolhida, infopais, dicas) ==  RED + '\n Você não possui tentativas suficientes para essa dica. ' + RESET:
-                print(fun_dica(dic_escolhida, infopais, dicas))
-            else: 
-                mostradica += '\n {}'.format(fun_dica(dic_escolhida, infopais, dicas))
-                dicas = exclui_dicas(dic_escolhida, dicas) 
-            
-            print(mostradist)
-            print(mostradica) 
+    
+            if dic_escolhida =='1':
+                i = fun_dica(dic_escolhida, infopais, dicas)
+
+                while i in coresdica:
+                    i = fun_dica(dic_escolhida, infopais, dicas) 
+                coresdica.append(i)
+                print(i) 
+
+            elif dic_escolhida=='2': 
+                b = fun_dica(dic_escolhida, infopais, dicas)
+
+                while b in letrasdica:
+                    b = fun_dica(dic_escolhida, infopais, dicas) 
+                letrasdica.append(b)
+                print(mostradist)
+                mostradica += '\n' + b 
+                print(mostradica)
+# Erro daqui pra 
+            elif dic_escolhida!='1' and dic_escolhida!='2':
+                if fun_dica(dic_escolhida, infopais, dicas) == '':
+                    print(mostradist)
+                    print('Você já usou essa dica.')
+                elif fun_dica(dic_escolhida, infopais, dicas) ==  RED + '\n Você não possui tentativas suficientes para essa dica. ' + RESET:
+                    print(mostradist)
+                    print(fun_dica(dic_escolhida, infopais, dicas))
+
+                else: 
+                    print(mostradist)
+                    mostradica += '\n {}'.format(fun_dica(dic_escolhida, infopais, dicas))
+                    dicas = exclui_dicas(dic_escolhida, dicas) 
+                
+            #print(mostradica) 
             print ('\n'+'Você tem ' + CYAN + '{}'.format(tentativas) + RESET + ' tentativa(s) restante(s)') # COR
 
             
@@ -94,6 +119,7 @@ while palpite != pais:
         infopalpite = dados_normalizados[palpite]
         p2 = infopalpite["geo"]["longitude"]
         l2 = infopalpite["geo"]["latitude"]
+
 
         if palpite in ptentados and palpite != pais:
             print('Esse país já foi... tente denovo')  
