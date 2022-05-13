@@ -19,11 +19,11 @@ l1 = infopais ['geo']['latitude']
 p1 = infopais['geo']['longitude']
 
 # PRINTS - Apresentação do jogo
+print(BLINK + ' =============================' + RESET)
+print(BLINK + '|      '+ MAGENTA + '   Bem vindo ao    '+ RESET +'    |'+RESET)
+print(BLINK + '|   '+ MAGENTA +'    Country Discover!  '+RESET+'   | '+RESET)
 print(' =============================')
-print('|         Bem vindo ao        |')
-print('|       Country Discover!     | ')
-print(' =============================\n')
-
+print(BOLD + '        by: Melina & Bex' + RESET + '\n')
 # - Regras do jogo:
 print('Regras do Jogo e Comandos:')
 print('dica/dicas ----> Abre o Mercado de dicas')
@@ -95,7 +95,7 @@ while palpite != pais:
         p2 = infopalpite["geo"]["longitude"]
         l2 = infopalpite["geo"]["latitude"]
 
-        if palpite in ptentados:
+        if palpite in ptentados and palpite != pais:
             print('Esse país já foi... tente denovo')  
         else: 
             ptentados.append(palpite)

@@ -13,6 +13,8 @@ RESET = "\033[0;0m"
 BOLD    = "\033[;1m"
 REVERSE = "\033[;7m" 
 YELLOW = '\033[;33m'
+MAGENTA = '\033[;35m'
+BLINK = '\033[5m'
 
 
 # Função da Dica (sucesso)
