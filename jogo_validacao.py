@@ -43,7 +43,7 @@ palpite = 'melbexlandia'
 
 while palpite != pais:
     # SE ESTÁ TENTANDO O MESMO PAIS
-    if palpite != "dica" or palpite!="dicas" and palpite in ptentados:
+    if palpite != "dica" or palpite!="dicas" and palpite not in ptentados:
         palpite = input('Qual o seu o palpite? ') 
     else:
         ptentados.append(palpite)
@@ -78,11 +78,18 @@ while palpite != pais:
 
             
     # Palpite = PAÍS
-    elif palpite in dados_normalizados:
+    elif palpite in dados_normalizados and palpite not in ptentados:
+        # Print teste
+        print(ptentados)
+        
         # latitude, longitude pais palpite
         infopalpite = dados_normalizados[palpite]
         p2 = infopalpite["geo"]["longitude"]
         l2 = infopalpite["geo"]["latitude"]
+
+        # adicionando palpite a lista de tentados
+        ptentados.append(palpite)
+
         # distancia de pais --> palpite
         distancia = haversine(EARTH_RADIUS, p1,l1,p2,l2) # tirar casas decimais
         mostradist += '\n {:.3f}km --> {}'.format(distancia, palpite) 
@@ -91,8 +98,11 @@ while palpite != pais:
         tentativas -= 1 
         print ('Você tem {} tentativa(s) restante(s)'.format(tentativas)) 
 
-    elif palpite not in dados_normalizados and palpite!='desisto' and palpite!='dica' and palpite!='dicas':
+    elif palpite not in dados_normalizados or palpite!='desisto' or palpite!='dica' or palpite!='dicas':
         print('Opção inválida')
+    
+    elif palpite in ptentados:
+        print("OOOPS... Esse país já foi!")
 
     elif palpite == "desisto":
         # Caso jogador desista
