@@ -38,15 +38,19 @@ mostradica = 'Dicas: '
 mostradist = 'Distâncias: '
 
 ptentados = []
-# Palpite
-palpite = 'melbexlandia'
+# Palpite para rodar, tive que fazer esse ser funcional 
+palpite = input('Qual o seu o palpite? ') 
 
 while palpite != pais:
     # SE ESTÁ TENTANDO O MESMO PAIS
-    if palpite != "dica" or palpite!="dicas" and palpite in ptentados:
-        palpite = input('Qual o seu o palpite? ') 
-    else:
-        ptentados.append(palpite)
+
+    # Mel coloquei essa parte dentro do laço de if que checa se o palpite é um pais, pq ai fica mais proativo
+    # if palpite in dados_normalizados:
+    #     if palpite in ptentados:
+    #         palpite = input('Qual o seu o palpite? ') 
+    #     else:
+    #         ptentados.append(palpite)
+    #         print(ptentados)
 
     # Palpite = DICA/DICAS
     if palpite == "dica" or palpite == "dicas":
@@ -80,16 +84,20 @@ while palpite != pais:
     # Palpite = PAÍS
     elif palpite in dados_normalizados:
         # latitude, longitude pais palpite
-        infopalpite = dados_normalizados[palpite]
-        p2 = infopalpite["geo"]["longitude"]
-        l2 = infopalpite["geo"]["latitude"]
-        # distancia de pais --> palpite
-        distancia = haversine(EARTH_RADIUS, p1,l1,p2,l2) # tirar casas decimais
-        mostradist += '\n {:.3f}km --> {}'.format(distancia, palpite) 
-        print(mostradist)
-        print(mostradica)       
-        tentativas -= 1 
-        print ('Você tem {} tentativa(s) restante(s)'.format(tentativas)) 
+        if palpite in ptentados:
+            palpite = input('Esse país já foi... tente denovo \nQual o seu o palpite? ') 
+        else: 
+            ptentados.append(palpite)
+            infopalpite = dados_normalizados[palpite]
+            p2 = infopalpite["geo"]["longitude"]
+            l2 = infopalpite["geo"]["latitude"]
+            # distancia de pais --> palpite
+            distancia = haversine(EARTH_RADIUS, p1,l1,p2,l2) # tirar casas decimais
+            mostradist += '\n {:.3f}km --> {}'.format(distancia, palpite) 
+            print(mostradist)
+            print(mostradica)       
+            tentativas -= 1 
+            print ('Você tem {} tentativa(s) restante(s)'.format(tentativas)) 
 
     elif palpite not in dados_normalizados and palpite!='desisto' and palpite!='dica' and palpite!='dicas':
         print('Opção inválida')
@@ -135,7 +143,7 @@ while palpite != pais:
             print("Muito elegante! Bora continuar!")
 
     # BEEEEX ARRUMEI PALPITE TEM QUE SER QUALQUER COISA PRO NOSSO WHILE RODAR DE NOVO!!!    
-    palpite = 1 
+    palpite = input('Qual o seu o palpite? ') 
 
 print('Você acertou o País!! O pais sorteado era mesmo {}'.format(pais))
 
@@ -174,8 +182,12 @@ else:
 # PRIORIDADES!
 # Dica não repetível
 # caso cores de dica disponíveis acabem!!
-# caso letras de capital disponíveis acabem!! --> espina falou de len
-# Arrumar para quando o pais da certo --> esta dando distância de harversine = 0km e não que a pessoa ganhou!! 
+# caso letras de capital disponíveis acabem!! --> espina falou de len -- Useiiii
+# Arrumar para quando o pais da certo --> esta dando distância de harversine = 0km e não que a pessoa ganhou!! --> resolvi
+# o Bo era que o while sempre entrava no primeiro if, pq tinha um or
+# botei para o que ja ve se é um pais 
+
+
 # AJUSTES
 # Cor
 # LETRA PAÍS, COR PAÍS APPEND COM VÍRGULAS 
