@@ -71,14 +71,14 @@ while palpite != pais:
         if tentativas == False:
             print(mostradist)
             print(mostradica) 
-            print('Você não possui tentativas suficientes para essa dica. ')
+            print(RED + 'Você não possui tentativas suficientes para essa dica. ' + RESET) # COR
 
         else: 
             mostradica += '\n {}'.format(fun_dica(dic_escolhida, infopais))
             dicas = exclui_dicas(dic_escolhida, dicas) 
             print(mostradist)
             print(mostradica) 
-            print ('Você tem {} tentativa(s) restante(s)'.format(tentativas))
+            print ('Você tem ' + CYAN + '{}'.format(tentativas) + RESET + ' tentativa(s) restante(s)') # COR
 
             
     # Palpite = PAÍS
@@ -97,10 +97,10 @@ while palpite != pais:
             print(mostradist)
             print(mostradica)       
             tentativas -= 1 
-            print ('Você tem {} tentativa(s) restante(s)'.format(tentativas)) 
+            print ('Você tem ' + CYAN + '{}'.format(tentativas) + RESET + ' tentativa(s) restante(s)') # COR
 
     elif palpite not in dados_normalizados and palpite!='desisto' and palpite!='dica' and palpite!='dicas':
-        print('Opção inválida')
+        print(RED + 'Opção inválida' + RESET) # COR
 
     elif palpite == "desisto":
         # Caso jogador desista
@@ -176,7 +176,7 @@ if voltar == 'S' or voltar == 's':
     palpite = input('Qual o seu o palpite? ') 
 
 else:
-    print('Fim de jogo. Parabéns!') 
+    print(BLUE + 'Fim de jogo. Parabéns!' + RESET) 
         
 
 # PRIORIDADES!

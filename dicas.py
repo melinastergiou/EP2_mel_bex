@@ -53,7 +53,7 @@ def fun_dica(ndica, infopais):
     return RED + 'Opção inválida' + RESET 
 
   else:
-    return 'Você não possui tentativas suficientes para essa dica. ' 
+    return RED + 'Você não possui tentativas suficientes para essa dica. ' + RESET
 
 def num_tentativas(ndica, tentativas):
 
