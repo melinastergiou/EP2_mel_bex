@@ -28,9 +28,10 @@ def fun_dica(ndica, infopais, dicas):
   elif ndica == '1':
     cores_bandeirap = infopais['bandeira']
     lcores = []
+    
     for cor in cores_bandeirap:
-      if cores_bandeirap[cor] > 0: 
-        lcores.append(cor)
+        if cores_bandeirap[cor] > 0 and cor != 'outras': 
+          lcores.append(cor)
 
     return '- Cores da Bandeira: {}'.format(choice(lcores)) 
 
@@ -92,8 +93,3 @@ def exclui_dicas(ndica, dicas):
     del(dicas[x])
   return dicas 
   
-
-
-   
-
-#def deisitir (): ## SERÁ? FAZ SENTIDO CRIAR ISSO?
