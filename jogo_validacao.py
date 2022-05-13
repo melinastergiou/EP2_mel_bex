@@ -58,7 +58,7 @@ while palpite != pais:
         # print (mercado de dicas) # fazer mercado de dicas       
         # escolhendo dica!
         print(' =============================================')
-        print('| Mercado de Dicas:                           |')
+        print('|'+ MAGENTA +' Mercado de Dicas:             '+RESET+'              |')
         print('| 1. Cor da Bandeira  --> custa 4 tentativas  |')
         print('| 2. Letra da Capital --> custa 3 tentativas  |')
         print('| 3. Área             --> custa 6 tentativas  |')
@@ -200,16 +200,9 @@ else:
 
 # PRIORIDADES!
 
-# caso cores de dica disponíveis acabem!!
-# caso letras de capital disponíveis acabem!! --> espina falou de len -- Useiiii
-# Arrumar para quando o pais da certo --> esta dando distância de harversine = 0km e não que a pessoa ganhou!! --> resolvi
-# o Bo era que o while sempre entrava no primeiro if, pq tinha um or
-# botei para o que ja ve se é um pais 
-
 
 # AJUSTES
-# Cor
-# LETRA PAÍS, COR PAÍS APPEND COM VÍRGULAS 
+
 # ordem da distância de harversine
 # tirar o outras das cores
 # append as dicas na ordem que elas aparecem no mercado ? 
