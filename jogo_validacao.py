@@ -43,10 +43,6 @@ palpite = input('Qual o seu o palpite? ')
 
 while palpite != pais:
     # SE ESTÁ TENTANDO O MESMO PAIS
-    if palpite != "dica" or palpite!="dicas" and palpite not in ptentados:
-        palpite = input('Qual o seu o palpite? ') 
-    else:
-        ptentados.append(palpite)
 
     # Mel coloquei essa parte dentro do laço de if que checa se o palpite é um pais, pq ai fica mais proativo
     # if palpite in dados_normalizados:
@@ -86,8 +82,7 @@ while palpite != pais:
 
             
     # Palpite = PAÍS
-    elif palpite in dados_normalizados and palpite not in ptentados:
-       
+    elif palpite in dados_normalizados:
         # latitude, longitude pais palpite
         infopalpite = dados_normalizados[palpite]
         p2 = infopalpite["geo"]["longitude"]
@@ -118,13 +113,8 @@ while palpite != pais:
             tentativas -= 1 
             print ('Você tem ' + CYAN + '{}'.format(tentativas) + RESET + ' tentativa(s) restante(s)') # COR
 
-<<<<<<< HEAD
     elif palpite not in dados_normalizados and palpite!='desisto' and palpite!='dica' and palpite!='dicas':
         print(RED + 'Opção inválida' + RESET) # COR
-=======
-    elif palpite not in dados_normalizados or palpite!='desisto' or palpite!='dica' or palpite!='dicas':
-        print('Opção inválida')
->>>>>>> 1a69fb90ec9dd52114a536ea4ae5ef4e52f6f00f
 
     elif palpite == "desisto":
         # Caso jogador desista
@@ -167,7 +157,7 @@ while palpite != pais:
             print("Muito elegante! Bora continuar!")
 
     # BEEEEX ARRUMEI PALPITE TEM QUE SER QUALQUER COISA PRO NOSSO WHILE RODAR DE NOVO!!!    
-    palpite = 1
+    palpite = input('Qual o seu o palpite? ') 
 
 print('Você acertou o País!! O pais sorteado era mesmo {}'.format(pais))
 
@@ -215,6 +205,7 @@ else:
 # AJUSTES
 # Cor
 # LETRA PAÍS, COR PAÍS APPEND COM VÍRGULAS 
+# ordem da distância de harversine
 
 
 
