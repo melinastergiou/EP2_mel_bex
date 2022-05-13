@@ -87,9 +87,7 @@ while palpite != pais:
             
     # Palpite = PAÍS
     elif palpite in dados_normalizados and palpite not in ptentados:
-        # Print teste
-        print(ptentados)
-        
+       
         # latitude, longitude pais palpite
         infopalpite = dados_normalizados[palpite]
         p2 = infopalpite["geo"]["longitude"]
