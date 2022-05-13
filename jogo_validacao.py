@@ -38,6 +38,7 @@ mostradica = 'Dicas: '
 mostradist = 'Distâncias: '
 
 ptentados = []
+pchutes = []
 # Palpite para rodar, tive que fazer esse ser funcional 
 palpite = input('Qual o seu o palpite? ') 
 
@@ -103,9 +104,15 @@ while palpite != pais:
             l2 = infopalpite["geo"]["latitude"]
             # distancia de pais --> palpite
             haversine1 = haversine(EARTH_RADIUS, p1,l1,p2,l2)
-            distancia = cor_haversine(haversine1, EARTH_RADIUS)
-            mostradist += '\n {} --> {}'.format(distancia, palpite) 
+            pchutes = adiciona_em_ordem(palpite, haversine1, pchutes) 
             print(mostradist)
+            for pais in pchutes:
+                if pais[1] >= 2*(EARTH_RADIUS):
+                    print(RED + '{:.3f} km --> {}'.format(pais[1], pais[0]) + RESET)
+                elif pais[1] < 2*(EARTH_RADIUS) and pais[1] >= EARTH_RADIUS:
+                    print(YELLOW + '{:.3f} km --> {}'.format(pais[1], pais[0]) + RESET)  
+                elif pais[1] < EARTH_RADIUS:
+                    print(GREEN + '{:.3f} km --> {}'.format(pais[1], pais[0]) + RESET)
             print(mostradica)       
             tentativas -= 1 
             print ('Você tem ' + CYAN + '{}'.format(tentativas) + RESET + ' tentativa(s) restante(s)') # COR
@@ -132,6 +139,7 @@ while palpite != pais:
                 mostradist = 'Distâncias: '
                 dicas = [0 , 1 , 2 , 3 , 4 , 5] 
                 ptentados = []
+                pchutes = [] 
                 # PRINTS - Apresentação do jogo
                 print(' =============================')
                 print('|         Bem vindo ao        |')
@@ -173,6 +181,7 @@ if voltar == 'S' or voltar == 's':
     mostradist = 'Distâncias: '
     dicas = [0 , 1 , 2 , 3 , 4 , 5] 
     ptentados = []
+    pchutes = [] 
     # PRINTS - Apresentação do jogo
     print(' =============================')
     print('|         Bem vindo ao        |')
