@@ -120,9 +120,6 @@ while palpite != pais:
 
     elif palpite not in dados_normalizados or palpite!='desisto' or palpite!='dica' or palpite!='dicas':
         print('Opção inválida')
-    
-    elif palpite in ptentados:
-        print("OOOPS... Esse país já foi!")
 
     elif palpite == "desisto":
         # Caso jogador desista
