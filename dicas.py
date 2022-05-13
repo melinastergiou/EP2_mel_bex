@@ -75,9 +75,10 @@ def num_tentativas(ndica, tentativas):
 
   if tentativas >= 0:
     return tentativas
+  else:
+    return False
 
-  return False 
-
+    
 def exclui_dicas(ndica, dicas):
   x = int(ndica)
   if x not in dicas: 
