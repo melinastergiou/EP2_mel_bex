@@ -42,11 +42,12 @@ pchutes = []
 coresdica =[]
 letrasdica =[]
 # Palpite para rodar, tive que fazer esse ser funcional 
-palpite = input('\n'+'Qual o seu o palpite? ')
+palpite = 'melbexlandia' #input('\n'+'Qual o seu o palpite? ')
 
 # CRIANDO WHILE PARA NÃO TER TENTATIVAS NEGATIVAS
     
-while palpite != pais and tentativas > 0:
+while palpite != pais and tentativas >= 1:
+    palpite = input('\n'+'Qual o seu o palpite? ')
     print(palpite)
     print(pais)
     # SE ESTÁ TENTANDO O MESMO PAIS
@@ -74,7 +75,6 @@ while palpite != pais and tentativas > 0:
         print(' =============================================\n')
         dic_escolhida = input("Escolha sua opção {}? ".format(str(dicas)).replace(',', '|'))
         tentativas = num_tentativas(dic_escolhida, tentativas)
-        print(tentativas)
         
         if tentativas == False:
             print(mostradist)
@@ -238,18 +238,18 @@ while palpite != pais and tentativas > 0:
     else:
         print(RED + 'Opção inválida' + RESET) # COR
 
-    palpite = input('\n' + 'Qual o seu o palpite? ')
+    #palpite = input('\n' + 'Qual o seu o palpite? ')
     
 
 
 # AQUI TO TENTANDO ESCREVER UM ACABARAM AS TENTATIVAS, PORQUE DAÍ O JOGO TEM QUE RODAR DENOVO COMO SE FOSSE APÓS ACERTO!
 if tentativas<=0:
     print ('\nAcabaram as tentativas... O país sorteado era {}'.format(pais))
-    voltar = input('Você deseja jogar novamente? (S/N)')
 
 if pais == palpite:
     print('\nVocê acertou o País!! O pais sorteado era mesmo {}'.format(pais))
-    voltar = input('Você deseja jogar novamente? (S/N)') 
+
+voltar = input('Você deseja jogar novamente? (S/N)') 
 
 # JOGANDO NOVAMENTE APÓS ACERTO
 #voltar = input('Você deseja jogar novamente? (S/N)')
