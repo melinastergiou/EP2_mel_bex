@@ -42,14 +42,14 @@ pchutes = []
 coresdica =[]
 letrasdica =[]
 # Palpite para rodar, tive que fazer esse ser funcional 
-palpite = 'melbexlandia' #input('\n'+'Qual o seu o palpite? ')
+# palpite = 'melbexlandia' #input('\n'+'Qual o seu o palpite? ')
+voltar = 's'
 
 # CRIANDO WHILE PARA NÃO TER TENTATIVAS NEGATIVAS
     
-while palpite != pais and tentativas >= 1:
+while voltar == 's' or voltar == 'S': #palpite != pais and tentativas >= 1:
     palpite = input('\n'+'Qual o seu o palpite? ')
-    print(palpite)
-    print(pais)
+
     # SE ESTÁ TENTANDO O MESMO PAIS
 
     # Mel coloquei essa parte dentro do laço de if que checa se o palpite é um pais, pq ai fica mais proativo
@@ -153,7 +153,39 @@ while palpite != pais and tentativas >= 1:
             print(mostradica) 
             print ('\n'+'Você tem ' + CYAN + '{}'.format(tentativas) + RESET + ' tentativa(s) restante(s)') # COR
 
-    # Palpite = PAÍS
+    elif pais == palpite:
+        print('\nVocê acertou o País!! O pais sorteado era mesmo {}'.format(pais))
+        voltar = voltar = input('Você deseja jogar novamente? (S/N)') 
+        if voltar == 'n' or voltar == 'N':
+            print("\nÉ muito deselegante desistir... Até a próxima!") 
+            break 
+        pais = sorteia_pais(dados_normalizados)
+        print(pais)
+        infopais = dados_normalizados[pais]
+
+        l1 = infopais ['geo']['latitude']
+        p1 = infopais['geo']['longitude']
+
+        # Tentativas
+        tentativas = 20
+        mostradica = '\n'+'Dicas: '
+        mostradist = '\n'+'Distâncias: '
+        dicas = [0 , 1 , 2 , 3 , 4 , 5] 
+        ptentados = []
+        pchutes = [] 
+        # PRINTS - Apresentação do jogo
+        print(' =============================')
+        print('|         Bem vindo ao        |')
+        print('|       Country Discover!     | ')
+        print(' =============================\n')
+        # - Regras do jogo:
+        print('Regras do Jogo e Comandos:')
+        print('dica/dicas ----> Abre o Mercado de dicas')
+        print('desisto    ----> Desiste da rodada')
+        print('inventário ----> Exibe a sua posição \n')
+
+
+    # Palpite = um PAÍS
     elif palpite in dados_normalizados:
         # latitude, longitude pais palpite
         infopalpite = dados_normalizados[palpite]
@@ -238,50 +270,82 @@ while palpite != pais and tentativas >= 1:
     else:
         print(RED + 'Opção inválida' + RESET) # COR
 
+    if tentativas <= 0:
+        print ('\nAcabaram as tentativas... O país sorteado era {}'.format(pais))
+        voltar = input('Você deseja jogar novamente? (S/N)') 
+        if voltar == 'n' or voltar == 'N':
+            print("\nÉ muito deselegante desistir... Até a próxima!") 
+            break 
+        pais = sorteia_pais(dados_normalizados)
+        print(pais)
+        infopais = dados_normalizados[pais]
+
+        l1 = infopais ['geo']['latitude']
+        p1 = infopais['geo']['longitude']
+
+        # Tentativas
+        tentativas = 20
+        mostradica = '\n'+'Dicas: '
+        mostradist = '\n'+'Distâncias: '
+        dicas = [0 , 1 , 2 , 3 , 4 , 5] 
+        ptentados = []
+        pchutes = [] 
+        # PRINTS - Apresentação do jogo
+        print(' =============================')
+        print('|         Bem vindo ao        |')
+        print('|       Country Discover!     | ')
+        print(' =============================\n')
+        # - Regras do jogo:
+        print('Regras do Jogo e Comandos:')
+        print('dica/dicas ----> Abre o Mercado de dicas')
+        print('desisto    ----> Desiste da rodada')
+        print('inventário ----> Exibe a sua posição \n')
+        
+
+
     #palpite = input('\n' + 'Qual o seu o palpite? ')
     
 
 
 # AQUI TO TENTANDO ESCREVER UM ACABARAM AS TENTATIVAS, PORQUE DAÍ O JOGO TEM QUE RODAR DENOVO COMO SE FOSSE APÓS ACERTO!
-if tentativas<=0:
-    print ('\nAcabaram as tentativas... O país sorteado era {}'.format(pais))
+# if tentativas<=0:
+#     print ('\nAcabaram as tentativas... O país sorteado era {}'.format(pais))
 
-if pais == palpite:
-    print('\nVocê acertou o País!! O pais sorteado era mesmo {}'.format(pais))
+# if pais == palpite:
+#     print('\nVocê acertou o País!! O pais sorteado era mesmo {}'.format(pais))
 
-voltar = input('Você deseja jogar novamente? (S/N)') 
+# voltar = input('Você deseja jogar novamente? (S/N)') 
 
-# JOGANDO NOVAMENTE APÓS ACERTO
-#voltar = input('Você deseja jogar novamente? (S/N)')
-if voltar == 'S' or voltar == 's':
-    pais = sorteia_pais(dados_normalizados)
-    print(pais)
-    infopais = dados_normalizados[pais]
+# # JOGANDO NOVAMENTE APÓS ACERTO
+# #voltar = input('Você deseja jogar novamente? (S/N)')
+# if voltar == 'S' or voltar == 's':
+#     pais = sorteia_pais(dados_normalizados)
+#     print(pais)
+#     infopais = dados_normalizados[pais]
 
-    l1 = infopais ['geo']['latitude']
-    p1 = infopais['geo']['longitude']
+#     l1 = infopais ['geo']['latitude']
+#     p1 = infopais['geo']['longitude']
 
-    # Tentativas
-    tentativas = 20
-    mostradica = '\n'+'Dicas: '
-    mostradist = '\n'+'Distâncias: '
-    dicas = [0 , 1 , 2 , 3 , 4 , 5] 
-    ptentados = []
-    pchutes = [] 
-    # PRINTS - Apresentação do jogo
-    print(' =============================')
-    print('|         Bem vindo ao        |')
-    print('|       Country Discover!     | ')
-    print(' =============================\n')
-    # - Regras do jogo:
-    print('Regras do Jogo e Comandos:')
-    print('dica/dicas ----> Abre o Mercado de dicas')
-    print('desisto    ----> Desiste da rodada')
-    print('inventário ----> Exibe a sua posição \n')
-    palpite = input('\n'+'Qual o seu o palpite? ') 
+#     # Tentativas
+#     tentativas = 20
+#     mostradica = '\n'+'Dicas: '
+#     mostradist = '\n'+'Distâncias: '
+#     dicas = [0 , 1 , 2 , 3 , 4 , 5] 
+#     ptentados = []
+#     pchutes = [] 
+#     # PRINTS - Apresentação do jogo
+#     print(' =============================')
+#     print('|         Bem vindo ao        |')
+#     print('|       Country Discover!     | ')
+#     print(' =============================\n')
+#     # - Regras do jogo:
+#     print('Regras do Jogo e Comandos:')
+#     print('dica/dicas ----> Abre o Mercado de dicas')
+#     print('desisto    ----> Desiste da rodada')
+#     print('inventário ----> Exibe a sua posição \n')
+#     palpite = input('\n'+'Qual o seu o palpite? ') 
 
-else:
-    print(BLUE + 'Fim de jogo. Parabéns!' + RESET) 
+print(BLUE + 'Fim de jogo. Parabéns!' + RESET) 
         
 
 # PRIORIDADES!
