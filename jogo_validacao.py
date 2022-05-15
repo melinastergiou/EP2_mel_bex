@@ -45,6 +45,8 @@ letrasdica =[]
 palpite = input('\n'+'Qual o seu o palpite? ') 
 
 while palpite != pais:
+    print(palpite)
+    print(pais)
     # SE ESTÁ TENTANDO O MESMO PAIS
 
     # Mel coloquei essa parte dentro do laço de if que checa se o palpite é um pais, pq ai fica mais proativo
@@ -115,7 +117,7 @@ while palpite != pais:
         l2 = infopalpite["geo"]["latitude"]
 
 
-        if palpite in ptentados and palpite != pais:
+        if palpite in ptentados:
             print('Esse país já foi... tente denovo')  
         else: 
             ptentados.append(palpite)
@@ -126,13 +128,13 @@ while palpite != pais:
             haversine1 = haversine(EARTH_RADIUS, p1,l1,p2,l2)
             pchutes = adiciona_em_ordem(palpite, haversine1, pchutes) 
             print(mostradist)
-            for pais in pchutes:
-                if pais[1] >= 2*(EARTH_RADIUS):
-                    print(RED + '{:.3f} km --> {}'.format(pais[1], pais[0]) + RESET)
-                elif pais[1] < 2*(EARTH_RADIUS) and pais[1] >= EARTH_RADIUS:
-                    print(YELLOW + '{:.3f} km --> {}'.format(pais[1], pais[0]) + RESET)  
-                elif pais[1] < EARTH_RADIUS:
-                    print(GREEN + '{:.3f} km --> {}'.format(pais[1], pais[0]) + RESET)
+            for p in pchutes:
+                if p[1] >= 2*(EARTH_RADIUS):
+                    print(RED + '{:.3f} km --> {}'.format(p[1], p[0]) + RESET)
+                elif p[1] < 2*(EARTH_RADIUS) and p[1] >= EARTH_RADIUS:
+                    print(YELLOW + '{:.3f} km --> {}'.format(p[1], p[0]) + RESET)  
+                elif p[1] < EARTH_RADIUS:
+                    print(GREEN + '{:.3f} km --> {}'.format(p[1], p[0]) + RESET)
             print(mostradica)       
             tentativas -= 1 
             print ('\n'+'Você tem ' + CYAN + '{}'.format(tentativas) + RESET + ' tentativa(s) restante(s)') # COR
@@ -180,13 +182,13 @@ while palpite != pais:
 
     elif palpite == 'inventario':
         print(mostradist)
-        for pais in pchutes:
-            if pais[1] >= 2*(EARTH_RADIUS):
-                print(RED + '{:.3f} km --> {}'.format(pais[1], pais[0]) + RESET)
-            elif pais[1] < 2*(EARTH_RADIUS) and pais[1] >= EARTH_RADIUS:
-                print(YELLOW + '{:.3f} km --> {}'.format(pais[1], pais[0]) + RESET)  
-            elif pais[1] < EARTH_RADIUS:
-                print(GREEN + '{:.3f} km --> {}'.format(pais[1], pais[0]) + RESET)
+        for p in pchutes:
+            if p[1] >= 2*(EARTH_RADIUS):
+                print(RED + '{:.3f} km --> {}'.format(p[1], p[0]) + RESET)
+            elif p[1] < 2*(EARTH_RADIUS) and p[1] >= EARTH_RADIUS:
+                print(YELLOW + '{:.3f} km --> {}'.format(p[1], p[0]) + RESET)  
+            elif p[1] < EARTH_RADIUS:
+                print(GREEN + '{:.3f} km --> {}'.format(p[1], p[0]) + RESET)
         print(mostradica)    
 
     # BEEEEX ARRUMEI PALPITE TEM QUE SER QUALQUER COISA PRO NOSSO WHILE RODAR DE NOVO!!! 
